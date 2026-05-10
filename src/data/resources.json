@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "React 官方文档",
+    "description": "最权威的学习资料",
+    "url": "https://react.dev",
+    "category": "Frontend"
+  },
+  {
+    "id": 2,
+    "title": "Tailwind CSS 文档",
+    "description": "实用主义 CSS 框架",
+    "url": "https://tailwindcss.com",
+    "category": "CSS"
+  },
+  {
+    "id": 3,
+    "title": "MDN Web Docs",
+    "description": "Web 技术百科全书",
+    "url": "https://developer.mozilla.org",
+    "category": "Reference"
+  },
+  {
+    "id": 4,
+    "title": "Frontend Masters",
+    "description": "高质量前端课程",
+    "url": "https://frontendmasters.com",
+    "category": "Course"
+  }
+]

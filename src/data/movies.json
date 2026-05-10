@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "绿光",
+    "originalTitle": "Le Rayon Vert",
+    "year": 1986,
+    "director": "埃里克·侯麦",
+    "rating": 5,
+    "comment": "当你看见绿光的时候，你就能读懂自己和他人的感情。",
+    "month": "2026-03",
+    "poster": "/images/movies/绿光.png",
+    "rotate": -3
+  },
+  {
+    "id": 2,
+    "title": "巴黎夏日",
+    "originalTitle": "Le Rendez-vous de l'été",
+    "year": 2025,
+    "director": "瓦伦丁·卡迪奇",
+    "rating": 4,
+    "comment": "奥运年的巴黎，一个人的夏日漫游。",
+    "month": "2026-03",
+    "poster": "/images/movies/巴黎夏日.png",
+    "rotate": 2
+  },
+  {
+    "id": 3,
+    "title": "时时刻刻",
+    "originalTitle": "The Hours",
+    "year": 2002,
+    "director": "史蒂芬·戴德利",
+    "rating": 5,
+    "comment": "Mrs. Dalloway said she would buy the flowers herself.",
+    "month": "2026-03",
+    "poster": "/images/movies/时时刻刻.png",
+    "rotate": -2
+  },
+  {
+    "id": 4,
+    "title": "纽约唯一活着的男孩",
+    "originalTitle": "The Only Living Boy in New York",
+    "year": 2017,
+    "director": "马克·韦布",
+    "rating": 3,
+    "comment": "Should is a dangerous word.",
+    "month": "2026-03",
+    "poster": "/images/movies/纽约唯一活着的男孩.png",
+    "rotate": 4
+  },
+  {
+    "id": 5,
+    "title": "心房客",
+    "originalTitle": "Asphalte",
+    "year": 2015,
+    "director": "萨米埃尔·本谢特里",
+    "rating": 4,
+    "comment": "Tout va bien. 一切都会好的。",
+    "month": "2026-04",
+    "poster": "/images/movies/心房客.png",
+    "rotate": -4
+  },
+  {
+    "id": 6,
+    "title": "情感价值",
+    "originalTitle": "Sentimental Value",
+    "year": 2025,
+    "director": "约阿希姆·提尔",
+    "rating": 4,
+    "comment": "父女之间的权力博弈，比任何剧本都精彩。",
+    "month": "2026-04",
+    "poster": "/images/movies/情感价值.png",
+    "rotate": 1
+  },
+  {
+    "id": 7,
+    "title": "快马驰情",
+    "originalTitle": "On Swift Horses",
+    "year": 2024,
+    "director": "丹尼尔·米纳汉",
+    "rating": 3,
+    "comment": "赛马场上，欲望与自我同时奔跑。",
+    "month": "2026-04",
+    "poster": "/images/movies/快马驰情.png",
+    "rotate": -1
+  },
+  {
+    "id": 8,
+    "title": "呼啸山庄",
+    "originalTitle": "Wuthering Heights",
+    "year": 2026,
+    "director": "埃默拉尔德·芬内尔",
+    "rating": 4,
+    "comment": "I cannot live without my life! I cannot live without my soul!",
+    "month": "2026-04",
+    "poster": "/images/movies/呼啸山庄.png",
+    "rotate": 3
+  },
+  {
+    "id": 9,
+    "title": "挽救计划",
+    "originalTitle": "Project Hail Mary",
+    "year": 2025,
+    "director": "菲尔·洛德 / 克里斯托弗·米勒",
+    "rating": 4,
+    "comment": "You are my favorite thing. Favorite thing in whole universe.",
+    "month": "2026-04",
+    "poster": "/images/movies/挽救计划.png",
+    "rotate": -2
+  }
+]

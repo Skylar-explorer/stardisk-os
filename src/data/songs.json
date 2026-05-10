@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "做一半的夢",
+    "artist": "椅子乐团 The Chairs",
+    "album": "做一半的夢",
+    "src": "/audio/01.mp3",
+    "cover": "http://p1.music.126.net/8AZW6TCoVSgXxanbPRpqBg==/109951169611647115.jpg",
+    "duration": "03:24"
+  },
+  {
+    "id": 2,
+    "title": "carioca in paris",
+    "artist": "mamerico",
+    "album": "homemade",
+    "src": "/audio/02.mp3",
+    "cover": "http://p1.music.126.net/SJzXJWjwFZUMoO5RM15Lxw==/109951167346737853.jpg",
+    "duration": "02:58"
+  },
+  {
+    "id": 3,
+    "title": "向日葵朝着夜",
+    "artist": "单依纯",
+    "album": "纯妹妹",
+    "src": "/audio/03.mp3",
+    "cover": "http://p1.music.126.net/V34GxyIJdz7vcdptDI_g-g==/109951172495731859.jpg",
+    "duration": "03:17"
+  },
+  {
+    "id": 4,
+    "title": "Until I Found You",
+    "artist": "Stephen Sanchez",
+    "album": "Until I Found You",
+    "src": "/audio/04.mp3",
+    "cover": "http://p1.music.126.net/A0yhkDH7ZQ9l2QrjXy6_Dg==/109951166347255254.jpg",
+    "duration": "02:57"
+  },
+  {
+    "id": 5,
+    "title": "散歩",
+    "artist": "Canappeco",
+    "album": "oto note",
+    "src": "/audio/05.mp3",
+    "cover": "http://p1.music.126.net/6Mgm1HBgTdUBJtyWV4-SpQ==/2304576371856634.jpg",
+    "duration": "04:03"
+  },
+  {
+    "id": 6,
+    "title": "Shotgun",
+    "artist": "George Ezra",
+    "album": "Staying at Tamara's",
+    "src": "/audio/06.mp3",
+    "cover": "http://p1.music.126.net/K4odlYG9r2fHx4DTukdyTw==/109951165981914913.jpg",
+    "duration": "03:21"
+  },
+  {
+    "id": 7,
+    "title": "L'Amour, Les Baguettes, Paris",
+    "artist": "Stella Jang",
+    "album": "Stairs",
+    "src": "/audio/07.mp3",
+    "cover": "http://p1.music.126.net/EdPRDvzZYQ4ROrZq_tQqMg==/109951172351039430.jpg",
+    "duration": "02:47"
+  },
+  {
+    "id": 8,
+    "title": "Haha, Hi",
+    "artist": "BoyWithUke",
+    "album": "Fever Dreams",
+    "src": "/audio/08.mp3",
+    "cover": "http://p1.music.126.net/mJrGyRqr8aq1eol9mwZYNQ==/109951167059279443.jpg",
+    "duration": "03:34"
+  }
+]
