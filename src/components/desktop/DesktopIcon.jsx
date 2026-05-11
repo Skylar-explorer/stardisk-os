@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { useWindowStore } from '../../stores/windowStore'
 
+const base = import.meta.env.BASE_URL
+
 const icons = [
-  { id: 'about', label: 'About Me', src: '/images/icons/About_Me.png' },
-  { id: 'terminal', label: 'Terminal', src: '/images/icons/Terminal.png' },
-  { id: 'music', label: 'Music', src: '/images/icons/Music.png' },
-  { id: 'projects', label: 'Projects', src: '/images/icons/Projects.png' },
-  { id: 'resources', label: 'Resources', src: '/images/icons/Resources.png' },
-  { id: 'movies', label: 'Movies', src: '/images/icons/Movies.png' },
-  { id: 'haha', label: 'Haha', src: '/images/icons/Haha.png' },
-  { id: 'puppy', label: 'Puppy', src: '/images/icons/Puppy.png' },
+  { id: 'about', label: 'About Me', src: 'images/icons/About_Me.png' },
+  { id: 'terminal', label: 'Terminal', src: 'images/icons/Terminal.png' },
+  { id: 'music', label: 'Music', src: 'images/icons/Music.png' },
+  { id: 'projects', label: 'Projects', src: 'images/icons/Projects.png' },
+  { id: 'resources', label: 'Resources', src: 'images/icons/Resources.png' },
+  { id: 'movies', label: 'Movies', src: 'images/icons/Movies.png' },
+  { id: 'haha', label: 'Haha', src: 'images/icons/Haha.png' },
+  { id: 'puppy', label: 'Puppy', src: 'images/icons/Puppy.png' },
 ]
 
 export default function DesktopIcons() {
@@ -33,7 +35,7 @@ export default function DesktopIcons() {
           <div className="w-20 h-20 flex items-center justify-center transition-transform duration-150 group-hover:scale-105"
           >
             <img
-              src={item.src}
+              src={base + item.src}
               alt={item.label}
               className={`w-[72px] h-[72px] object-contain transition-all duration-150 ${
                 selectedId === item.id

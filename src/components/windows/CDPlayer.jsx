@@ -207,7 +207,7 @@ export default function CDPlayer({ movie, phase }) {
                       style={{ width: 80, height: 110 }}
                     >
                       <img
-                        src={movie?.poster}
+                        src={import.meta.env.BASE_URL + (movie?.poster || '')}
                         alt=""
                         className="w-full h-full object-cover"
                       />
