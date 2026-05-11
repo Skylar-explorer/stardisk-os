@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 const defaultWindows = [
-  { id: 'about', title: 'About Me', defaultX: 100, defaultY: 80, defaultW: 420, defaultH: 320 },
+  { id: 'about', title: 'About Me', defaultX: 80, defaultY: 60, defaultW: 760, defaultH: 560 },
   { id: 'terminal', title: 'System Terminal', defaultX: 500, defaultY: 80, defaultW: 400, defaultH: 340 },
   { id: 'music', title: 'Music Player', defaultX: 300, defaultY: 100, defaultW: 380, defaultH: 520 },
   { id: 'projects', title: 'Projects', defaultX: 120, defaultY: 120, defaultW: 520, defaultH: 520 },

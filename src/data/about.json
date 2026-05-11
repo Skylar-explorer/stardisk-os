@@ -1,97 +1,157 @@
 {
-  "name": "Skylar",
-  "avatar": "images/avatar.png",
-  "searchEngine": {
-    "logo": "AboutMe Search",
-    "tagline": "搜索你想了解的 Skylar"
-  },
-  "pages": {
+  "sections": {
     "who": {
-      "title": "Skylar 是谁？",
-      "url": "https://about.me/who-is-skylar",
-      "icon": "👤",
-      "content": [
-        { "type": "heading", "text": "你好，我是 Skylar" },
-        { "type": "paragraph", "text": "一个对人类行为、技术边界和社会责任都充满好奇的人。" },
-        { "type": "paragraph", "text": "目前正在寻找实习机会，希望能在产品/研究/工程交叉的领域贡献自己的观察力和执行力。" }
+      "query": "Skylar是谁？",
+      "results": [
+        {
+          "title": "Skylar 的个人档案",
+          "url": "https://skylar.me/profile",
+          "summary": "一个对人类行为、技术边界和社会责任都充满好奇的人。",
+          "icon": "👤",
+          "content": [
+            { "type": "heading", "text": "你好，我是 Skylar" },
+            { "type": "paragraph", "text": "一个对人类行为、技术边界和社会责任都充满好奇的人。" },
+            { "type": "paragraph", "text": "目前正在寻找实习机会，希望能在产品/研究/工程交叉的领域贡献自己的观察力和执行力。" }
+          ]
+        }
       ]
     },
     "human": {
-      "title": "Skylar 是一个什么样的人类？",
-      "url": "https://about.me/skylar-human",
-      "icon": "🧬",
-      "content": [
-        { "type": "heading", "text": "性格快照" },
-        { "type": "tag", "label": "MBTI", "value": "INTP" },
-        { "type": "paragraph", "text": "喜欢观察多于表达，但表达时会尽量有趣。对逻辑和美感有双重执念——代码要干净，电影要好看，PPT 要对齐。" },
-        { "type": "heading", "text": "一些标签" },
-        { "type": "badge", "items": ["深夜看电影", "散步思考", "笔记狂魔", "冷笑话爱好者", "细节控"] }
+      "query": "Skylar是一个什么样的人类？",
+      "results": [
+        {
+          "title": "Skylar 的性格快照",
+          "url": "https://skylar.me/personality",
+          "summary": "INTP 型人格，喜欢观察多于表达，对逻辑和美感有双重执念。",
+          "icon": "🧬",
+          "content": [
+            { "type": "heading", "text": "性格快照" },
+            { "type": "tag", "label": "MBTI", "value": "INTP" },
+            { "type": "paragraph", "text": "喜欢观察多于表达，但表达时会尽量有趣。对逻辑和美感有双重执念——代码要干净，电影要好看，PPT 要对齐。" },
+            { "type": "heading", "text": "一些标签" },
+            { "type": "badge", "items": ["深夜看电影", "散步思考", "笔记狂魔", "冷笑话爱好者", "细节控"] }
+          ]
+        }
       ]
     },
     "hobbies": {
-      "title": "Skylar 平时喜欢干嘛？",
-      "url": "https://about.me/skylar-hobbies",
-      "icon": "🎬",
-      "content": [
-        { "type": "heading", "text": "看电影" },
-        { "type": "paragraph", "text": "从侯麦到科幻片，每年稳定摄入 100+ 部电影。相信电影是理解他人最温柔的捷径。" },
-        { "type": "heading", "text": "旅行" },
-        { "type": "paragraph", "text": "喜欢去陌生城市散步，不打卡、不做攻略，观察当地人的日常节奏。" },
-        { "type": "heading", "text": "听歌" },
-        { "type": "paragraph", "text": "网易云深度用户，歌单跨越后摇、爵士、华语独立。音乐是代码时的白噪音，也是情绪的存档点。" },
-        { "type": "heading", "text": "喜剧" },
-        { "type": "paragraph", "text": "stand-up、sketch、栋笃笑都看。认为喜剧是对生活最诚实的解构。" }
+      "query": "Skylar平时喜欢干嘛？",
+      "results": [
+        {
+          "title": "Skylar 的观影清单",
+          "url": "https://skylar.me/movies",
+          "summary": "从侯麦到科幻片，每年稳定摄入 100+ 部电影。",
+          "icon": "🎬",
+          "content": [
+            { "type": "heading", "text": "看电影" },
+            { "type": "paragraph", "text": "从侯麦到科幻片，每年稳定摄入 100+ 部电影。相信电影是理解他人最温柔的捷径。" }
+          ]
+        },
+        {
+          "title": "Skylar 的旅行日记",
+          "url": "https://skylar.me/travel",
+          "summary": "喜欢去陌生城市散步，不打卡、不做攻略。",
+          "icon": "✈️",
+          "content": [
+            { "type": "heading", "text": "旅行" },
+            { "type": "paragraph", "text": "喜欢去陌生城市散步，不打卡、不做攻略，观察当地人的日常节奏。" }
+          ]
+        },
+        {
+          "title": "Skylar 的音乐口味",
+          "url": "https://skylar.me/music",
+          "summary": "网易云深度用户，歌单跨越后摇、爵士、华语独立。",
+          "icon": "🎧",
+          "content": [
+            { "type": "heading", "text": "听歌" },
+            { "type": "paragraph", "text": "网易云深度用户，歌单跨越后摇、爵士、华语独立。音乐是代码时的白噪音，也是情绪的存档点。" }
+          ]
+        },
+        {
+          "title": "Skylar 的喜剧收藏",
+          "url": "https://skylar.me/comedy",
+          "summary": "stand-up、sketch、栋笃笑都看。",
+          "icon": "🎭",
+          "content": [
+            { "type": "heading", "text": "喜剧" },
+            { "type": "paragraph", "text": "stand-up、sketch、栋笃笑都看。认为喜剧是对生活最诚实的解构。" }
+          ]
+        }
       ]
     },
     "experience": {
-      "title": "Skylar 有哪些工作经历？",
-      "url": "https://about.me/skylar-experience",
-      "icon": "💼",
-      "content": [
-        { "type": "heading", "text": "实习经历" },
-        { "type": "timeline", "items": [
-          {
-            "period": "2025.06 - 2025.09",
-            "company": "待补充",
-            "role": "待补充",
-            "desc": "待补充"
-          },
-          {
-            "period": "2024.03 - 2024.06",
-            "company": "待补充",
-            "role": "待补充",
-            "desc": "待补充"
-          }
-        ]},
-        { "type": "heading", "text": "项目经历" },
-        { "type": "paragraph", "text": "详见 Projects 窗口，包括 Scout Research Lab、Follow Builders、TechDaily 等个人项目。" }
+      "query": "Skylar有哪些工作经历？",
+      "results": [
+        {
+          "title": "Skylar 的实习经历",
+          "url": "https://skylar.me/experience",
+          "summary": "多段实习时间线，以及 Scout Research Lab、Follow Builders 等个人项目。",
+          "icon": "💼",
+          "content": [
+            { "type": "heading", "text": "实习经历" },
+            { "type": "timeline", "items": [
+              { "period": "2025.06 - 2025.09", "company": "待补充", "role": "待补充", "desc": "待补充" },
+              { "period": "2024.03 - 2024.06", "company": "待补充", "role": "待补充", "desc": "待补充" }
+            ]},
+            { "type": "heading", "text": "项目经历" },
+            { "type": "paragraph", "text": "详见 Projects 窗口，包括 Scout Research Lab、Follow Builders、TechDaily 等个人项目。" }
+          ]
+        }
       ]
     },
     "exploring": {
-      "title": "Skylar 最近在探索些啥？",
-      "url": "https://about.me/skylar-exploring",
-      "icon": "🔭",
-      "content": [
-        { "type": "heading", "text": "AI 细分领域" },
-        { "type": "paragraph", "text": "关注 AI 在学术研究和信息策展中的应用。正在用 OpenAlex API 和 LLM 做文献综述工具的实验。" },
-        { "type": "heading", "text": "具身智能" },
-        { "type": "paragraph", "text": "对机器人如何理解物理世界很感兴趣。在关注相关论文和产品动态，思考人机协作的未来形态。" },
-        { "type": "heading", "text": "企业社会责任" },
-        { "type": "paragraph", "text": "相信技术公司需要回答'为什么做'而不只是'怎么做'。关注科技伦理、可持续商业模型和社会影响力评估。" }
+      "query": "Skylar最近在探索些啥？",
+      "results": [
+        {
+          "title": "Skylar 的 AI 实验",
+          "url": "https://skylar.me/ai",
+          "summary": "关注 AI 在学术研究和信息策展中的应用。",
+          "icon": "🤖",
+          "content": [
+            { "type": "heading", "text": "AI 细分领域" },
+            { "type": "paragraph", "text": "关注 AI 在学术研究和信息策展中的应用。正在用 OpenAlex API 和 LLM 做文献综述工具的实验。" }
+          ]
+        },
+        {
+          "title": "Skylar 关注的具身智能",
+          "url": "https://skylar.me/embodied",
+          "summary": "对机器人如何理解物理世界很感兴趣。",
+          "icon": "🦾",
+          "content": [
+            { "type": "heading", "text": "具身智能" },
+            { "type": "paragraph", "text": "对机器人如何理解物理世界很感兴趣。在关注相关论文和产品动态，思考人机协作的未来形态。" }
+          ]
+        },
+        {
+          "title": "Skylar 的科技伦理思考",
+          "url": "https://skylar.me/ethics",
+          "summary": "相信技术公司需要回答'为什么做'而不只是'怎么做'。",
+          "icon": "🌍",
+          "content": [
+            { "type": "heading", "text": "企业社会责任" },
+            { "type": "paragraph", "text": "相信技术公司需要回答'为什么做'而不只是'怎么做'。关注科技伦理、可持续商业模型和社会影响力评估。" }
+          ]
+        }
       ]
     },
     "contact": {
-      "title": "怎样才能联系到 Skylar？",
-      "url": "https://about.me/skylar-contact",
-      "icon": "📡",
-      "content": [
-        { "type": "heading", "text": "联系方式" },
-        { "type": "contact", "items": [
-          { "label": "邮箱", "value": "your@email.com", "link": "mailto:your@email.com" },
-          { "label": "GitHub", "value": "github.com/Skylar-explorer", "link": "https://github.com/Skylar-explorer" },
-          { "label": "X / Twitter", "value": "@your_handle", "link": "https://x.com/your_handle" }
-        ]},
-        { "type": "paragraph", "text": "欢迎聊技术、电影、冷笑话，或者任何你觉得有意思的话题。" }
+      "query": "怎样才能联系到Skylar？",
+      "results": [
+        {
+          "title": "联系 Skylar",
+          "url": "https://skylar.me/contact",
+          "summary": "欢迎聊技术、电影、冷笑话，或者任何你觉得有意思的话题。",
+          "icon": "📡",
+          "content": [
+            { "type": "heading", "text": "联系方式" },
+            { "type": "contact", "items": [
+              { "label": "邮箱", "value": "your@email.com", "link": "mailto:your@email.com" },
+              { "label": "GitHub", "value": "github.com/Skylar-explorer", "link": "https://github.com/Skylar-explorer" },
+              { "label": "X / Twitter", "value": "@your_handle", "link": "https://x.com/your_handle" }
+            ]},
+            { "type": "paragraph", "text": "欢迎聊技术、电影、冷笑话，或者任何你觉得有意思的话题。" }
+          ]
+        }
       ]
     }
   },
