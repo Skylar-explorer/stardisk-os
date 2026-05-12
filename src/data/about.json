@@ -1,166 +1,305 @@
 {
   "sections": {
-    "who": {
-      "query": "Skylar是谁？",
-      "results": [
-        {
-          "title": "Skylar 的个人档案",
-          "url": "https://skylar.me/profile",
-          "summary": "一个对人类行为、技术边界和社会责任都充满好奇的人。",
-          "icon": "👤",
-          "content": [
-            { "type": "heading", "text": "你好，我是 Skylar" },
-            { "type": "paragraph", "text": "一个对人类行为、技术边界和社会责任都充满好奇的人。" },
-            { "type": "paragraph", "text": "目前正在寻找实习机会，希望能在产品/研究/工程交叉的领域贡献自己的观察力和执行力。" }
-          ]
-        }
-      ]
-    },
     "human": {
       "query": "Skylar是一个什么样的人类？",
       "results": [
         {
-          "title": "Skylar 的性格快照",
-          "url": "https://skylar.me/personality",
-          "summary": "INTP 型人格，喜欢观察多于表达，对逻辑和美感有双重执念。",
-          "icon": "🧬",
+          "title": "官方百科",
+          "url": "https://baike.baidu.com/item/Skylar",
+          "icon": "📖",
+          "style": "baidu",
+          "image": "images/avatar.png",
+          "summary": "康书宁，对外经济贸易大学工商管理专业（全球管理实验班）本科在读，27届。",
           "content": [
-            { "type": "heading", "text": "性格快照" },
-            { "type": "tag", "label": "MBTI", "value": "INTP" },
-            { "type": "paragraph", "text": "喜欢观察多于表达，但表达时会尽量有趣。对逻辑和美感有双重执念——代码要干净，电影要好看，PPT 要对齐。" },
-            { "type": "heading", "text": "一些标签" },
-            { "type": "badge", "items": ["深夜看电影", "散步思考", "笔记狂魔", "冷笑话爱好者", "细节控"] }
+            {
+              "type": "baidu_intro",
+              "text": "康书宁，现就读于对外经济贸易大学，工商管理专业（全球管理实验班），本科，27届。在校三年工龄两年半，在智谱、美团、快手以及腾讯系公司都干过，蹚过各种方向的业务，目前蹚到了AI方向，正在看机会。"
+            }
           ]
-        }
-      ]
-    },
-    "hobbies": {
-      "query": "Skylar平时喜欢干嘛？",
-      "results": [
+        },
         {
-          "title": "Skylar 的观影清单",
-          "url": "https://skylar.me/movies",
-          "summary": "从侯麦到科幻片，每年稳定摄入 100+ 部电影。",
+          "title": "作为在读本科生，这个学上得怎么样",
+          "url": "https://skylar.me/academic",
+          "icon": "🎓",
+          "summary": "商科生但修读了计量经济学、AI大数据营销、管理数据挖掘等跨学科课程。",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "商科生，但在校三年修读了计量经济学、AI大数据营销、项目管理、管理数据挖掘与解析、消费者行为实验、概率论与数理统计、创业管理、油画、媒体与社会、伦理学、心理咨询技巧等课程，感谢自由的选课制度让我对管理学、计算机、数学、文学、哲学、艺术学的课程都做了尝试，莫名成为了一个什么都了解一点的大学生，也体会到了同时调用多个学科思维思考并解决问题的美妙。学的都还算可以，院排名8/372（前2%）"
+            }
+          ]
+        },
+        {
+          "title": "一些关于Skylar的标签",
+          "url": "https://skylar.me/tags",
+          "icon": "🏷️",
+          "summary": "INFP-A、双子座、05后、Vibecoder、八爪鱼、淡人、深度思考、持续学习。",
+          "content": [
+            {
+              "type": "badge",
+              "items": [
+                "INFP-A",
+                "双子座",
+                "05后",
+                "Vibecoder",
+                "八爪鱼",
+                "淡人",
+                "深度思考",
+                "持续学习"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Skylar的灵魂是由什么构成的",
+          "url": "https://skylar.me/soul",
+          "icon": "✨",
+          "summary": "向内求索，擅长情绪感知，体验完整的世界，尽人事听天命。",
+          "content": [
+            {
+              "type": "quote",
+              "text": "向内求索，重视在归纳总结中实现自我完善"
+            },
+            {
+              "type": "quote",
+              "text": "擅长情绪感知，同时乐于给别人提供情绪价值"
+            },
+            {
+              "type": "quote",
+              "text": "体验完整的世界，尽人事听天命"
+            }
+          ]
+        },
+        {
+          "title": "Skylar平时喜欢干嘛",
+          "url": "https://skylar.me/hobbies",
           "icon": "🎬",
+          "summary": "看电影、猫狗爱好者、Coding小工具、喜剧。",
           "content": [
-            { "type": "heading", "text": "看电影" },
-            { "type": "paragraph", "text": "从侯麦到科幻片，每年稳定摄入 100+ 部电影。相信电影是理解他人最温柔的捷径。" }
-          ]
-        },
-        {
-          "title": "Skylar 的旅行日记",
-          "url": "https://skylar.me/travel",
-          "summary": "喜欢去陌生城市散步，不打卡、不做攻略。",
-          "icon": "✈️",
-          "content": [
-            { "type": "heading", "text": "旅行" },
-            { "type": "paragraph", "text": "喜欢去陌生城市散步，不打卡、不做攻略，观察当地人的日常节奏。" }
-          ]
-        },
-        {
-          "title": "Skylar 的音乐口味",
-          "url": "https://skylar.me/music",
-          "summary": "网易云深度用户，歌单跨越后摇、爵士、华语独立。",
-          "icon": "🎧",
-          "content": [
-            { "type": "heading", "text": "听歌" },
-            { "type": "paragraph", "text": "网易云深度用户，歌单跨越后摇、爵士、华语独立。音乐是代码时的白噪音，也是情绪的存档点。" }
-          ]
-        },
-        {
-          "title": "Skylar 的喜剧收藏",
-          "url": "https://skylar.me/comedy",
-          "summary": "stand-up、sketch、栋笃笑都看。",
-          "icon": "🎭",
-          "content": [
-            { "type": "heading", "text": "喜剧" },
-            { "type": "paragraph", "text": "stand-up、sketch、栋笃笑都看。认为喜剧是对生活最诚实的解构。" }
+            {
+              "type": "heading",
+              "text": "看电影"
+            },
+            {
+              "type": "paragraph",
+              "text": "阅片量可观，善于在电影中捕捉能够丰富自己的元素，观影风格乱七八糟，很少记录但今年开始尝试记录每个月看过的还不错的电影，观影推荐详见桌面「movies」文件夹，如果你也喜欢电影，欢迎一起聊聊"
+            },
+            {
+              "type": "heading",
+              "text": "猫狗爱好者"
+            },
+            {
+              "type": "paragraph",
+              "text": "喜欢看喜欢撸喜欢一起生活"
+            },
+            {
+              "type": "heading",
+              "text": "创新创造"
+            },
+            {
+              "type": "paragraph",
+              "text": "经常Coding一些趁手的小工具来给自己提效，是设计是产品是研发是运营也是用户"
+            },
+            {
+              "type": "heading",
+              "text": "喜剧"
+            },
+            {
+              "type": "paragraph",
+              "text": "喜欢读梗也喜欢抛梗，快乐makes everything！"
+            }
           ]
         }
       ]
     },
-    "experience": {
-      "query": "Skylar有哪些工作经历？",
+    "career": {
+      "query": "Skylar的职业探索",
       "results": [
         {
-          "title": "Skylar 的实习经历",
+          "title": "Skylar有过哪些工作（实习）经历",
           "url": "https://skylar.me/experience",
-          "summary": "多段实习时间线，以及 Scout Research Lab、Follow Builders 等个人项目。",
           "icon": "💼",
+          "summary": "按时间由近及远：美团AI PM、智谱GTM&产运、快手内容运营、未名企鹅市场。",
           "content": [
-            { "type": "heading", "text": "实习经历" },
-            { "type": "timeline", "items": [
-              { "period": "2025.06 - 2025.09", "company": "待补充", "role": "待补充", "desc": "待补充" },
-              { "period": "2024.03 - 2024.06", "company": "待补充", "role": "待补充", "desc": "待补充" }
-            ]},
-            { "type": "heading", "text": "项目经历" },
-            { "type": "paragraph", "text": "详见 Projects 窗口，包括 Scout Research Lab、Follow Builders、TechDaily 等个人项目。" }
-          ]
-        }
-      ]
-    },
-    "exploring": {
-      "query": "Skylar最近在探索些啥？",
-      "results": [
-        {
-          "title": "Skylar 的 AI 实验",
-          "url": "https://skylar.me/ai",
-          "summary": "关注 AI 在学术研究和信息策展中的应用。",
-          "icon": "🤖",
-          "content": [
-            { "type": "heading", "text": "AI 细分领域" },
-            { "type": "paragraph", "text": "关注 AI 在学术研究和信息策展中的应用。正在用 OpenAlex API 和 LLM 做文献综述工具的实验。" }
+            {
+              "type": "heading",
+              "text": "按时间顺序由近及远"
+            },
+            {
+              "type": "timeline",
+              "items": [
+                {
+                  "period": "美团",
+                  "company": "AI PM",
+                  "role": "酒旅部门AI产品建设",
+                  "desc": ""
+                },
+                {
+                  "period": "智谱",
+                  "company": "GTM & 产运",
+                  "role": "z.ai在海外平台的增长和产品运营",
+                  "desc": ""
+                },
+                {
+                  "period": "快手",
+                  "company": "内容运营",
+                  "role": "线上优质内容供给和线下活动策划执行",
+                  "desc": ""
+                },
+                {
+                  "period": "未名企鹅",
+                  "company": "市场",
+                  "role": "toB解决方案定制和toC内容宣传",
+                  "desc": ""
+                }
+              ]
+            }
           ]
         },
         {
-          "title": "Skylar 关注的具身智能",
-          "url": "https://skylar.me/embodied",
-          "summary": "对机器人如何理解物理世界很感兴趣。",
-          "icon": "🦾",
+          "title": "为什么做这些事情",
+          "url": "https://skylar.me/why",
+          "icon": "🧭",
+          "summary": "从腾讯系市场到快手内容运营，再到智谱海外增长，最后到美团AI PM。",
           "content": [
-            { "type": "heading", "text": "具身智能" },
-            { "type": "paragraph", "text": "对机器人如何理解物理世界很感兴趣。在关注相关论文和产品动态，思考人机协作的未来形态。" }
+            {
+              "type": "paragraph",
+              "text": "在腾讯系toB大数据企业做过市场，发现自己toC的兴趣点以及内容宣传的重要性于是去了快手做主站内容运营；摸清互联网内容运营规则之后发现不能只站在内容生产者的角度看问题，还要去寻找吸引用户的逻辑，结合对AI的兴趣于是去了智谱做海外增长（GTM）；一轮轮拉用户促留存之后发现做好AI产品的第一性还是产品本身，于是开始兼做产运，有了一定积累之后去了美团做AI PM。"
+            }
           ]
         },
         {
-          "title": "Skylar 的科技伦理思考",
-          "url": "https://skylar.me/ethics",
-          "summary": "相信技术公司需要回答'为什么做'而不只是'怎么做'。",
-          "icon": "🌍",
+          "title": "工作中都干了啥",
+          "url": "https://skylar.me/work",
+          "icon": "📄",
+          "summary": "可以在简历里捕捉到相关内容。",
           "content": [
-            { "type": "heading", "text": "企业社会责任" },
-            { "type": "paragraph", "text": "相信技术公司需要回答'为什么做'而不只是'怎么做'。关注科技伦理、可持续商业模型和社会影响力评估。" }
+            {
+              "type": "paragraph",
+              "text": "可以在我的简历里捕捉到相关内容，"
+            },
+            {
+              "type": "resume_link"
+            }
+          ]
+        },
+        {
+          "title": "Skylar最近在探索些啥",
+          "url": "https://skylar.me/exploring",
+          "icon": "🔭",
+          "summary": "AI Agent、具身智能、CSR学术、多模态创作、AI合规与风险。",
+          "content": [
+            {
+              "type": "heading",
+              "text": "AI Agent"
+            },
+            {
+              "type": "paragraph",
+              "text": "AI Agent是目前花时间比较多的。我会直接用AI coding搭一些Agent链路来处理日常学习和工作里一些任务——信息的聚合、整理、流转之类的。有意思的地方在于，这个过程本身就是一种学习方式：与其读别人怎么描述 Agent，不如自己动手感受它在哪里顺、在哪里断、在哪里开始变得不可控。目前搭的东西都还相对轻量，但对这个方向的理解在实践里变得越来越具体。我也在关注这个领域更宏观的走向——Multi-Agent协作、Agent的记忆与规划机制、以及'自主性'究竟意味着什么——这些问题还没有答案，欢迎大家来指点交流。"
+            },
+            {
+              "type": "heading",
+              "text": "具身智能"
+            },
+            {
+              "type": "paragraph",
+              "text": "具身智能是我持续保持关注但苦于缺乏渠道缺乏机会去深入进去的方向。吸引我的不是某一个具体的技术路线，而是它背后隐含的一个更根本的假设——智能可能不能脱离物理身体单独存在，感知、行动和认知之间的关系可能比我们想象的更紧密。这个视角让我重新审视了一些关于 AI 的基本问题。目前真诚希望有机会能够深入学习一下。"
+            },
+            {
+              "type": "heading",
+              "text": "CSR（学术）"
+            },
+            {
+              "type": "paragraph",
+              "text": "学术方向在做CSR（企业社会责任）方向的探索。读文献的过程里，我越来越觉得这个领域真正有意思的地方不在于'企业应不应该承担社会责任'这种规范性的讨论，而在于责任、利益和合法性之间那些复杂的互动关系——企业在什么条件下会把社会责任内化为真正的战略逻辑，而不只是对外的表态？这背后涉及制度压力、利益相关者关系、信息不对称等等维度，每个展开都挺深，这个领域的复杂性本身让我觉得值得认真探索一些相关的问题。"
+            },
+            {
+              "type": "heading",
+              "text": "多模态"
+            },
+            {
+              "type": "paragraph",
+              "text": "因为喜欢电影，脑子里有一些一直没有出口的东西，而 AI 正在让'一个人做一部电影'这件事变得不再只是想想而已，所以希望有机会用AI做出属于自己的电影作品。我有在关注这个方向的工具和创作实践，也在等自己的想法和能力都到位的那个时机。同时，自诩有一定审美，觉得世界苦AI审美久矣，希望能亲身助力AI审美的进步"
+            },
+            {
+              "type": "heading",
+              "text": "AI合规与风险"
+            },
+            {
+              "type": "paragraph",
+              "text": "AI合规与风险是我最近观察得越来越多的一个方向。我本人是拥抱AI以及AI给我带来的生活轨迹变化的，这一点没有动摇过。但正因为离得近，一些现象反而看得很清楚：AI生成内容的大规模涌现，会不会在潜移默化里使人类的审美降级、创造力枯竭？深度伪造和信息污染持续蔓延，会不会让事实与假象之间的边界变得模糊，从而给群体性的非理性甚至暴力提供温床？"
+            }
           ]
         }
       ]
     },
     "contact": {
-      "query": "怎样才能联系到Skylar？",
+      "query": "怎样联系到Skylar？",
       "results": [
         {
-          "title": "联系 Skylar",
-          "url": "https://skylar.me/contact",
-          "summary": "欢迎聊技术、电影、冷笑话，或者任何你觉得有意思的话题。",
-          "icon": "📡",
+          "title": "给我打电话",
+          "url": "tel:15849579556",
+          "icon": "☎️",
+          "summary": "电话：15849579556",
           "content": [
-            { "type": "heading", "text": "联系方式" },
-            { "type": "contact", "items": [
-              { "label": "邮箱", "value": "your@email.com", "link": "mailto:your@email.com" },
-              { "label": "GitHub", "value": "github.com/Skylar-explorer", "link": "https://github.com/Skylar-explorer" },
-              { "label": "X / Twitter", "value": "@your_handle", "link": "https://x.com/your_handle" }
-            ]},
-            { "type": "paragraph", "text": "欢迎聊技术、电影、冷笑话，或者任何你觉得有意思的话题。" }
+            {
+              "type": "contact_big",
+              "label": "电话",
+              "value": "15849579556",
+              "link": "tel:15849579556"
+            }
+          ]
+        },
+        {
+          "title": "发我邮箱里也行",
+          "url": "mailto:skylar000126@163.com",
+          "icon": "📮",
+          "summary": "邮箱：skylar000126@163.com",
+          "content": [
+            {
+              "type": "contact_big",
+              "label": "邮箱",
+              "value": "skylar000126@163.com",
+              "link": "mailto:skylar000126@163.com"
+            }
+          ]
+        },
+        {
+          "title": "或者直接+v说",
+          "url": "#",
+          "icon": "📱",
+          "summary": "微信号：Skylar_N0001（手机号直接检索也能找到）",
+          "content": [
+            {
+              "type": "contact_big",
+              "label": "微信号",
+              "value": "Skylar_N0001",
+              "link": "#"
+            },
+            {
+              "type": "paragraph",
+              "text": "用手机号直接检索也能找到"
+            }
+          ]
+        },
+        {
+          "title": "其他社媒",
+          "url": "https://skylar.me/social",
+          "icon": "🌐",
+          "summary": "小红书、即刻、X、reddit、油管等平台都有号。",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "小红书、即刻、X、reddit、油管等平台都有号，但小小i人平常只刷不发，最近在考虑装修一些个人主页发发东西，等装修好了一定第一时间把号更新在这里🥹"
+            }
           ]
         }
       ]
     }
   },
   "suggestions": [
-    "Skylar是谁？",
     "Skylar是一个什么样的人类？",
-    "Skylar平时喜欢干嘛？",
-    "Skylar有哪些工作经历？",
-    "Skylar最近在探索些啥？",
-    "怎样才能联系到Skylar？"
+    "Skylar的职业探索",
+    "怎样联系到Skylar？"
   ]
 }

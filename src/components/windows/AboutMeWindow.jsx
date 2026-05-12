@@ -2,18 +2,12 @@ import { useState, useRef, useEffect } from 'react'
 import aboutData from '../../data/about.json'
 
 const SUGGESTION_MAP = {
-  'skylar是谁': 'who',
-  'skylar是谁？': 'who',
   'skylar是一个什么样的人类': 'human',
   'skylar是一个什么样的人类？': 'human',
-  'skylar平时喜欢干嘛': 'hobbies',
-  'skylar平时喜欢干嘛？': 'hobbies',
-  'skylar有哪些工作经历': 'experience',
-  'skylar有哪些工作经历？': 'experience',
-  'skylar最近在探索些啥': 'exploring',
-  'skylar最近在探索些啥？': 'exploring',
-  '怎样才能联系到skylar': 'contact',
-  '怎样才能联系到skylar？': 'contact',
+  'skylar的职业探索': 'career',
+  'skylar的职业探索？': 'career',
+  '怎样联系到skylar': 'contact',
+  '怎样联系到skylar？': 'contact',
 }
 
 function BrowserChrome({ url, onHome, onBack, canGoBack }) {
@@ -169,6 +163,28 @@ function SearchResults({ query, results, onOpenDetail }) {
   )
 }
 
+function BaiduIntro({ image, text }) {
+  return (
+    <div className="flex gap-4">
+      <div className="shrink-0">
+        <div className="w-[120px] h-[150px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
+          <img
+            src={import.meta.env.BASE_URL + image}
+            alt="Skylar"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
+      </div>
+      <div className="flex-1">
+        <div className="text-[13px] text-retro-text leading-relaxed">
+          {text}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function ContentRenderer({ content }) {
   return (
     <div className="space-y-5">
@@ -186,6 +202,14 @@ function ContentRenderer({ content }) {
               <p key={i} className="text-[13px] text-retro-text leading-relaxed pl-[11px]">
                 {block.text}
               </p>
+            )
+          case 'quote':
+            return (
+              <div key={i} className="pl-[11px] border-l-2 border-[#3a6db5]/20 py-1">
+                <p className="text-[13px] text-retro-text/80 italic leading-relaxed">
+                  "{block.text}"
+                </p>
+              </div>
             )
           case 'tag':
             return (
@@ -218,27 +242,49 @@ function ContentRenderer({ content }) {
                     <div className="text-[11px] text-retro-muted mb-0.5">{item.period}</div>
                     <div className="text-[13px] font-semibold text-retro-text">{item.company}</div>
                     <div className="text-[12px] text-retro-muted">{item.role}</div>
-                    <div className="text-[12px] text-retro-text/80 mt-1">{item.desc}</div>
+                    {item.desc && <div className="text-[12px] text-retro-text/80 mt-1">{item.desc}</div>}
                   </div>
                 ))}
               </div>
             )
-          case 'contact':
+          case 'contact_big':
             return (
-              <div key={i} className="pl-[11px] space-y-2.5">
-                {block.items.map((item, j) => (
-                  <div key={j} className="flex items-center gap-2">
-                    <span className="text-[11px] text-retro-muted w-20 shrink-0">{item.label}</span>
+              <div key={i} className="pl-[11px]">
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-retro-muted w-12 shrink-0">{block.label}</span>
+                  {block.link && block.link !== '#' ? (
                     <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[12px] text-[#1a0dab] hover:underline truncate"
+                      href={block.link}
+                      className="text-[14px] text-[#1a0dab] hover:underline font-medium"
                     >
-                      {item.value}
+                      {block.value}
                     </a>
-                  </div>
-                ))}
+                  ) : (
+                    <span className="text-[14px] text-retro-text font-medium">{block.value}</span>
+                  )}
+                </div>
+              </div>
+            )
+          case 'baidu_intro':
+            return (
+              <BaiduIntro
+                key={i}
+                image="images/avatar.png"
+                text={block.text}
+              />
+            )
+          case 'resume_link':
+            return (
+              <div key={i} className="pl-[11px]">
+                <a
+                  href={import.meta.env.BASE_URL + 'resume.pdf'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[13px] text-[#1a0dab] hover:underline font-medium px-3 py-1.5 rounded border border-[rgba(58,109,181,0.15)] bg-white/50 hover:bg-white transition-colors"
+                >
+                  <span>📎</span>
+                  戳此查看简历
+                </a>
               </div>
             )
           default:
@@ -251,6 +297,8 @@ function ContentRenderer({ content }) {
 
 function DetailPage({ result, onBack }) {
   if (!result) return null
+
+  const isBaidu = result.style === 'baidu'
 
   return (
     <div className="h-full overflow-auto px-6 py-5">
@@ -273,6 +321,13 @@ function DetailPage({ result, onBack }) {
               <div className="text-[11px] text-retro-muted">{result.url}</div>
             </div>
           </div>
+
+          {isBaidu && (
+            <div className="mb-3 px-2 py-1 bg-[#f0f7ff] rounded text-[10px] text-[#3a6db5] font-medium inline-block">
+              📖 百度百科风格词条
+            </div>
+          )}
+
           <ContentRenderer content={result.content} />
         </div>
 
