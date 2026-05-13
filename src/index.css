@@ -10,7 +10,10 @@
 
 body {
   font-family: 'VT323', 'Courier New', monospace;
-  background: #dce073;
+  background-image: url('/images/wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   height: 100vh;
   width: 100vw;

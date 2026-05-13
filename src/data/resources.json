@@ -1,30 +1,114 @@
 [
   {
-    "id": 1,
-    "title": "React 官方文档",
-    "description": "最权威的学习资料",
-    "url": "https://react.dev",
-    "category": "Frontend"
+    "id": "x-1",
+    "title": "karpathy",
+    "description": "前 Tesla AI Director，OpenAI 创始成员。发推极简但信息量极大，每次都能学到新东西。",
+    "url": "https://x.com/karpathy",
+    "category": "X"
   },
   {
-    "id": 2,
-    "title": "Tailwind CSS 文档",
-    "description": "实用主义 CSS 框架",
-    "url": "https://tailwindcss.com",
-    "category": "CSS"
+    "id": "x-2",
+    "title": "swyx",
+    "description": "Latent Space 主播，AI 工程化方向观察很准。Latent Space 通讯和播客质量都很高。",
+    "url": "https://x.com/swyx",
+    "category": "X"
   },
   {
-    "id": 3,
-    "title": "MDN Web Docs",
-    "description": "Web 技术百科全书",
-    "url": "https://developer.mozilla.org",
-    "category": "Reference"
+    "id": "x-3",
+    "title": "Simon Willison",
+    "description": "Datasette 作者，AI 工具化实践的标杆。他的 blog 和推特都是动手派的学习素材。",
+    "url": "https://x.com/simonw",
+    "category": "X"
   },
   {
-    "id": 4,
-    "title": "Frontend Masters",
-    "description": "高质量前端课程",
-    "url": "https://frontendmasters.com",
-    "category": "Course"
+    "id": "x-4",
+    "title": "Andrej Karpathy 中文搬运",
+    "description": "国内有团队在做 karpathy 内容的中文翻译和解读，降低阅读门槛。",
+    "url": "https://x.com",
+    "category": "X"
+  },
+  {
+    "id": "podcast-1",
+    "title": "Latent Space",
+    "description": "AI 工程 + 产品方向最好的英文播客。深度访谈，每期 1.5h 起步，适合通勤听。",
+    "url": "https://www.latent.space",
+    "category": "播客"
+  },
+  {
+    "id": "podcast-2",
+    "title": "纵横四海",
+    "description": "人类使用说明书。每期拆一本书，从脑科学、心理学到社会学，知识密度极高。",
+    "url": "https://www.xiaoyuzhoufm.com/podcast/62333613b03acan3u",
+    "category": "播客"
+  },
+  {
+    "id": "podcast-3",
+    "title": "忽左忽右",
+    "description": "文化类播客，历史、政治、国际关系都有涉及。拓宽认知边界的好素材。",
+    "url": "https://www.xiaoyuzhoufm.com/podcast/5e7bd359418a84a046e3ec49",
+    "category": "播客"
+  },
+  {
+    "id": "podcast-4",
+    "title": "AI 炼金术",
+    "description": "国内 AI 产品人做的播客，聊 AI 产品设计和商业落地，很接地气。",
+    "url": "https://www.xiaoyuzhoufm.com",
+    "category": "播客"
+  },
+  {
+    "id": "wechat-1",
+    "title": "机器之心",
+    "description": "国内 AI 资讯最全的媒体之一，论文解读、行业动态、产品发布都覆盖。",
+    "url": "https://mp.weixin.qq.com",
+    "category": "公众号"
+  },
+  {
+    "id": "wechat-2",
+    "title": "AI 大模型日报",
+    "description": "每天汇总 AI 领域的重要论文、产品、投融资信息，信息密度高。",
+    "url": "https://mp.weixin.qq.com",
+    "category": "公众号"
+  },
+  {
+    "id": "wechat-3",
+    "title": "晚点LatePost",
+    "description": "互联网商业报道最深入的媒体。美团、快手、智谱这些公司的报道都很有料。",
+    "url": "https://mp.weixin.qq.com",
+    "category": "公众号"
+  },
+  {
+    "id": "wechat-4",
+    "title": "产品沉思录",
+    "description": "产品经理的 newsletter，每期围绕一个主题深度思考，对我做产品启发很大。",
+    "url": "https://mp.weixin.qq.com",
+    "category": "公众号"
+  },
+  {
+    "id": "youtube-1",
+    "title": "Two Minute Papers",
+    "description": "用最短的时间讲清楚最新的 AI 论文。画面精美，节奏快，适合快速扫读领域进展。",
+    "url": "https://www.youtube.com/@TwoMinutePapers",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-2",
+    "title": "Yannic Kilcher",
+    "description": "深度学习论文精读。比 Two Minute Papers 更深，适合想真正理解论文的人。",
+    "url": "https://www.youtube.com/@YannicKilcher",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-3",
+    "title": "Fireship",
+    "description": "技术速通型频道，100 秒讲清楚一个技术概念。前端、后端、AI 都有覆盖。",
+    "url": "https://www.youtube.com/@Fireship",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-4",
+    "title": "3Blue1Brown",
+    "description": "数学可视化天花板。线性代数、微积分、神经网络都讲得极漂亮，真正理解数学。",
+    "url": "https://www.youtube.com/@3blue1brown",
+    "category": "YouTube"
   }
 ]

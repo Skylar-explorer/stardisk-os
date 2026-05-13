@@ -47,6 +47,37 @@ function StatusBar({ text }) {
   )
 }
 
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      // Fallback
+      const ta = document.createElement('textarea')
+      ta.value = text
+      document.body.appendChild(ta)
+      ta.select()
+      document.execCommand('copy')
+      document.body.removeChild(ta)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    }
+  }
+
+  return (
+    <button
+      onClick={handleCopy}
+      className="text-[10px] px-2 py-[2px] rounded border border-[rgba(58,109,181,0.2)] bg-white/60 text-retro-muted hover:text-retro-text hover:border-[rgba(58,109,181,0.4)] transition-all ml-2"
+    >
+      {copied ? '✅ 已复制' : '📋 复制'}
+    </button>
+  )
+}
+
 function HomePage({ onSearch, suggestions }) {
   const [query, setQuery] = useState('')
   const inputRef = useRef(null)
@@ -118,7 +149,49 @@ function HomePage({ onSearch, suggestions }) {
   )
 }
 
+function BaiduCard({ result, onOpenDetail }) {
+  const introBlock = result.content?.find((b) => b.type === 'baidu_intro')
+  const introText = introBlock?.text || result.summary
+
+  return (
+    <div className="bg-white/80 border-2 border-[rgba(58,109,181,0.15)] border-r-white/80 border-b-white/80 rounded-[5px] p-4 shadow-[0_2px_8px_rgba(58,109,181,0.08)] mb-5">
+      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[rgba(58,109,181,0.1)]">
+        <span className="text-[16px]">📖</span>
+        <span className="text-[13px] font-bold text-retro-text">{result.title}</span>
+        <span className="text-[10px] px-1.5 py-[1px] rounded bg-[#3a6db5]/10 text-[#3a6db5] ml-auto">百度百科</span>
+      </div>
+
+      <div className="flex gap-4">
+        <div className="shrink-0">
+          <div className="w-[110px] h-[140px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
+            <img
+              src={import.meta.env.BASE_URL + (result.image || 'images/avatar.png')}
+              alt="Skylar"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="text-[12px] text-retro-text leading-relaxed">
+            {introText}
+          </div>
+          <button
+            onClick={() => onOpenDetail(0)}
+            className="text-[11px] text-[#1a0dab] hover:underline mt-2 inline-block"
+          >
+            查看详情 →
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function SearchResults({ query, results, onOpenDetail }) {
+  const baiduResult = results.find((r) => r.style === 'baidu')
+  const normalResults = results.filter((r) => r.style !== 'baidu')
+
   return (
     <div className="h-full overflow-auto px-6 py-5">
       <div className="max-w-[640px] mx-auto">
@@ -128,57 +201,44 @@ function SearchResults({ query, results, onOpenDetail }) {
           搜索用时 0.06 秒
         </div>
 
+        {/* Baidu-style card at top of results */}
+        {baiduResult && (
+          <BaiduCard result={baiduResult} onOpenDetail={onOpenDetail} />
+        )}
+
         <div className="space-y-4">
-          {results.map((result, idx) => (
-            <div
-              key={idx}
-              className="group cursor-pointer"
-              onClick={() => onOpenDetail(idx)}
-            >
-              <div className="flex items-start gap-3">
-                <span className="text-[18px] mt-0.5 shrink-0">{result.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <div className="text-[14px] text-[#1a0dab] group-hover:underline leading-snug font-medium">
-                    {result.title}
-                  </div>
-                  <div className="text-[11px] text-[#006621] leading-snug truncate">
-                    {result.url}
-                  </div>
-                  <div className="text-[12px] text-[#545454] leading-relaxed mt-0.5">
-                    {result.summary}
+          {normalResults.map((result, idx) => {
+            // Adjust index to account for baidu result being filtered out
+            const realIndex = results.indexOf(result)
+            return (
+              <div
+                key={realIndex}
+                className="group cursor-pointer"
+                onClick={() => onOpenDetail(realIndex)}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-[18px] mt-0.5 shrink-0">{result.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[14px] text-[#1a0dab] group-hover:underline leading-snug font-medium">
+                      {result.title}
+                    </div>
+                    <div className="text-[11px] text-[#006621] leading-snug truncate">
+                      {result.url}
+                    </div>
+                    <div className="text-[12px] text-[#545454] leading-relaxed mt-0.5">
+                      {result.summary}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-6 pt-4 border-t border-[rgba(58,109,181,0.1)]">
           <div className="text-[11px] text-retro-muted text-center">
             🌀 AboutMe Search · 仅索引关于 Skylar 的公开信息
           </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function BaiduIntro({ image, text }) {
-  return (
-    <div className="flex gap-4">
-      <div className="shrink-0">
-        <div className="w-[120px] h-[150px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
-          <img
-            src={import.meta.env.BASE_URL + image}
-            alt="Skylar"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
-      </div>
-      <div className="flex-1">
-        <div className="text-[13px] text-retro-text leading-relaxed">
-          {text}
         </div>
       </div>
     </div>
@@ -250,7 +310,7 @@ function ContentRenderer({ content }) {
           case 'contact_big':
             return (
               <div key={i} className="pl-[11px]">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-[11px] text-retro-muted w-12 shrink-0">{block.label}</span>
                   {block.link && block.link !== '#' ? (
                     <a
@@ -262,16 +322,29 @@ function ContentRenderer({ content }) {
                   ) : (
                     <span className="text-[14px] text-retro-text font-medium">{block.value}</span>
                   )}
+                  <CopyButton text={block.value} />
                 </div>
               </div>
             )
           case 'baidu_intro':
             return (
-              <BaiduIntro
-                key={i}
-                image="images/avatar.png"
-                text={block.text}
-              />
+              <div key={i} className="flex gap-4">
+                <div className="shrink-0">
+                  <div className="w-[120px] h-[150px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
+                    <img
+                      src={import.meta.env.BASE_URL + 'images/avatar.png'}
+                      alt="Skylar"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[13px] text-retro-text leading-relaxed">
+                    {block.text}
+                  </div>
+                </div>
+              </div>
             )
           case 'resume_link':
             return (
