@@ -24,7 +24,7 @@ export default function DesktopIcons() {
   }
 
   return (
-    <div className="absolute left-10 top-12 grid grid-cols-2 gap-x-14 gap-y-3">
+    <div className="absolute left-10 top-12 grid grid-cols-2 gap-x-14 gap-y-5">
       {icons.map((item) => (
         <div
           key={item.id}
@@ -32,24 +32,23 @@ export default function DesktopIcons() {
           onClick={() => setSelectedId(item.id)}
           onDoubleClick={() => handleDoubleClick(item.id)}
         >
-          <div className="w-20 h-20 flex items-center justify-center transition-transform duration-150 group-hover:scale-105"
-          >
+          <div className="w-20 h-20 flex items-center justify-center transition-transform duration-150 group-hover:scale-105">
             <img
               src={base + item.src}
               alt={item.label}
               className={`w-[72px] h-[72px] object-contain transition-all duration-150 ${
                 selectedId === item.id
-                  ? 'scale-95 drop-shadow-[0_2px_3px_rgba(0,0,0,0.12)]'
-                  : 'drop-shadow-[0_3px_5px_rgba(0,0,0,0.18)] group-hover:drop-shadow-[0_5px_10px_rgba(0,0,0,0.22)]'
+                  ? 'scale-95 drop-shadow-[0_2px_4px_rgba(0,0,0,0.35)]'
+                  : 'drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_6px_14px_rgba(0,0,0,0.5)]'
               }`}
               draggable={false}
             />
           </div>
           <div
-            className={`mt-0 text-[13px] leading-tight px-1.5 py-0.5 rounded transition-colors ${
+            className={`mt-0.5 text-[15px] font-bold leading-tight px-2 py-0.5 rounded transition-colors ${
               selectedId === item.id
-                ? 'bg-retro-blue text-white'
-                : 'text-retro-text [text-shadow:0_1px_2px_rgba(255,255,255,0.7)]'
+                ? 'bg-retro-accent text-[#121018]'
+                : 'text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.95),0_0_8px_rgba(0,0,0,0.6)]'
             }`}
           >
             {item.label}

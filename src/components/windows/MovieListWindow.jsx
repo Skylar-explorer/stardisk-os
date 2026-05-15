@@ -5,7 +5,7 @@ import CDPlayer from './CDPlayer'
 
 function Disc({ onClick, title, isRemoved }) {
   return (
-    <div className="flex flex-col items-center gap-1 w-[68px] cursor-pointer group"
+    <div className="flex flex-col items-center gap-1.5 w-[88px] cursor-pointer group"
       onClick={onClick}
     >
       <AnimatePresence>
@@ -15,11 +15,11 @@ function Disc({ onClick, title, isRemoved }) {
             initial={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeIn' }}
-            whileHover={{ scale: 1.12 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <div
-              className="w-12 h-12 rounded-full relative"
+              className="w-16 h-16 rounded-full relative"
               style={{
                 background: `
                   radial-gradient(circle at 35% 35%, rgba(255,255,255,0.5) 0%, transparent 40%),
@@ -30,32 +30,32 @@ function Disc({ onClick, title, isRemoved }) {
                     #c0c8d0, #e8e8e8, #a0d0c0, #e8e8e8
                   )
                 `,
-                boxShadow: '0 3px 8px rgba(0,0,0,0.18), inset 0 1px 2px rgba(255,255,255,0.5)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.5)',
               }}
             >
               <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e8ecf0] border border-[#b8c0c8]"
-                style={{ width: 14, height: 14 }}
+                style={{ width: 18, height: 18 }}
               />
             </div>
             {/* Hover ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-retro-blue/0 group-hover:border-retro-blue/40 transition-colors duration-200 -m-1" />
+            <div className="absolute inset-0 rounded-full border-2 border-retro-accent/0 group-hover:border-retro-accent/40 transition-colors duration-200 -m-1" />
           </motion.div>
         )}
       </AnimatePresence>
 
       {isRemoved && (
         <motion.div
-          className="w-12 h-12 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center"
+          className="w-16 h-16 rounded-full border-2 border-dashed border-gray-300 flex items-center justify-center"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.2 }}
         >
-          <span className="text-[8px] text-gray-300">□</span>
+          <span className="text-[10px] text-gray-300">□</span>
         </motion.div>
       )}
 
-      <span className="text-[8px] text-retro-muted text-center leading-tight truncate w-full px-0.5">
+      <span className="text-[11px] text-retro-text text-center leading-tight truncate w-full px-0.5">
         {title}
       </span>
     </div>
@@ -69,7 +69,7 @@ function MonthTab({ label, active, onClick, position }) {
       className="relative px-4 py-1.5 text-[10px] tracking-[2px] font-bold transition-all duration-200 -mb-px"
       style={{
         zIndex: active ? 10 : 5 - position,
-        color: active ? '#3a6db5' : '#8aa0b8',
+        color: active ? '#c89048' : '#8a7d6e',
         background: active
           ? '#f0ece4'
           : 'linear-gradient(180deg, #e0dcd4 0%, #d4d0c8 100%)',
@@ -79,7 +79,7 @@ function MonthTab({ label, active, onClick, position }) {
         borderBottom: active ? 'none' : '1px solid rgba(0,0,0,0.06)',
         borderRadius: '4px 4px 0 0',
         boxShadow: active
-          ? '0 -2px 6px rgba(58,109,181,0.08)'
+          ? '0 -2px 6px rgba(200,144,72,0.15)'
           : 'inset 0 -2px 4px rgba(0,0,0,0.03)',
         transform: active ? 'translateY(-1px)' : 'none',
       }}
@@ -163,8 +163,8 @@ export default function MovieListWindow() {
           style={{
             background: '#f0ece4',
             backgroundImage: `
-              linear-gradient(rgba(180,170,150,0.15) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(180,170,150,0.15) 1px, transparent 1px)
+              linear-gradient(rgba(160,150,130,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(160,150,130,0.1) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
           }}
@@ -178,7 +178,7 @@ export default function MovieListWindow() {
           />
 
           {/* Disc grid */}
-          <div className="relative p-4 flex flex-wrap justify-center gap-x-4 gap-y-5">
+          <div className="relative p-5 flex flex-wrap justify-center gap-x-6 gap-y-6">
             {currentMovies.map((movie) => (
               <Disc
                 key={movie.id}
@@ -190,9 +190,9 @@ export default function MovieListWindow() {
 
             {/* Empty slots to maintain grid feel if few discs */}
             {Array.from({ length: Math.max(0, 6 - currentMovies.length) }).map((_, i) => (
-              <div key={`empty-${i}`} className="w-[68px] flex flex-col items-center gap-1 opacity-30">
-                <div className="w-12 h-12 rounded-full border-2 border-dashed border-gray-300" />
-                <span className="text-[8px] text-gray-300">—</span>
+              <div key={`empty-${i}`} className="w-[88px] flex flex-col items-center gap-1.5 opacity-30">
+                <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#c0b8b0]" />
+                <span className="text-[11px] text-[#a09888]">—</span>
               </div>
             ))}
           </div>

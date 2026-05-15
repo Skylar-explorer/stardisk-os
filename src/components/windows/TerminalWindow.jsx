@@ -1,59 +1,85 @@
 import { useRef, useEffect, useState, useCallback } from 'react'
 import { useTerminalStore } from '../../stores/terminalStore'
 
-const TYPING_SPEED = 10
+const LINE_DELAY = 40
 
 export default function TerminalWindow() {
   const { history, executeCommand } = useTerminalStore()
   const [input, setInput] = useState('')
-  const [typedMap, setTypedMap] = useState({})
-  const [isTyping, setIsTyping] = useState(false)
   const [inputHistory, setInputHistory] = useState([])
   const [historyCursor, setHistoryCursor] = useState(-1)
+  const [displayed, setDisplayed] = useState([])
+  const [isRunning, setIsRunning] = useState(false)
   const scrollRef = useRef(null)
-  const inputRef = useRef(null)
-  const prevHistoryLen = useRef(history.length)
+  const queueRef = useRef([])
+  const timerRef = useRef(null)
 
-  // Auto scroll
+  // Auto scroll to bottom
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight
     }
-  }, [history, typedMap])
+  }, [displayed])
 
-  // Typing effect: type newly added output/error items
+  // Build flat lines from history and feed into animation queue
   useEffect(() => {
-    if (history.length <= prevHistoryLen.current) {
-      prevHistoryLen.current = history.length
+    // Clear screen handling
+    if (history.length === 0) {
+      setDisplayed([])
+      setIsRunning(false)
+      queueRef.current = []
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
       return
     }
 
-    const newItems = history.slice(prevHistoryLen.current).filter((item) => item.type !== 'input')
-    prevHistoryLen.current = history.length
-
-    if (newItems.length === 0) return
-
-    let cancelled = false
-    setIsTyping(true)
-
-    const typeItems = async () => {
-      for (const item of newItems) {
-        if (cancelled) break
-        const fullText = item.content
-        for (let i = 0; i <= fullText.length; i++) {
-          if (cancelled) break
-          setTypedMap((prev) => ({ ...prev, [item.id]: fullText.slice(0, i) }))
-          await new Promise((r) => setTimeout(r, TYPING_SPEED))
-        }
+    // Build target lines from current history
+    const target = []
+    history.forEach((item) => {
+      if (item.type === 'input') {
+        target.push(item)
+      } else if (typeof item.content === 'string') {
+        const lines = item.content.split('\n')
+        lines.forEach((line, i) => {
+          target.push({ ...item, id: `${item.id}-${i}`, content: line })
+        })
       }
-      if (!cancelled) setIsTyping(false)
+    })
+
+    // Find lines not yet shown
+    const shownIds = new Set(displayed.map((d) => d.id))
+    const newLines = target.filter((t) => !shownIds.has(t.id))
+
+    if (newLines.length === 0) return
+
+    // Append to queue
+    queueRef.current.push(...newLines)
+
+    // Start consumer timer if not running
+    if (!timerRef.current) {
+      setIsRunning(true)
+      timerRef.current = setInterval(() => {
+        if (queueRef.current.length === 0) {
+          clearInterval(timerRef.current)
+          timerRef.current = null
+          setIsRunning(false)
+          return
+        }
+        const next = queueRef.current.shift()
+        setDisplayed((prev) => [...prev, next])
+      }, LINE_DELAY)
     }
 
-    typeItems()
-    return () => { cancelled = true }
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
+    }
   }, [history])
 
-  // Command history navigation
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === 'ArrowUp') {
@@ -81,7 +107,7 @@ export default function TerminalWindow() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!input.trim() || isTyping) return
+    if (!input.trim() || isRunning) return
     executeCommand(input)
     setInputHistory((prev) => [...prev, input])
     setHistoryCursor(-1)
@@ -92,14 +118,11 @@ export default function TerminalWindow() {
     if (item.type === 'input') {
       return (
         <div key={item.id} className="text-[#7ec8e3]">
-          <span className="text-[#5aaa7a] mr-1.5 select-none">user@stardisk:~$</span>
+          <span className="text-[#5aaa7a] mr-1.5 select-none">user@skylaros:~$</span>
           {item.content}
         </div>
       )
     }
-
-    const isDone = typedMap[item.id] === item.content || typedMap[item.id] === undefined
-    const text = typedMap[item.id] !== undefined ? typedMap[item.id] : item.content
 
     const colorClass =
       item.type === 'error'
@@ -115,64 +138,35 @@ export default function TerminalWindow() {
         : 'text-[#c8e6c9]'
 
     return (
-      <div key={item.id} className={`${colorClass} ${item.type === 'error' ? '' : 'font-normal'}`}>
-        <span className="whitespace-pre-wrap">{text}</span>
-        {!isDone && (
-          <span className="inline-block w-[7px] h-[15px] bg-[#c8e6c9] ml-0.5 align-middle animate-pulse" />
-        )}
+      <div key={item.id} className={colorClass}>
+        <span className="whitespace-pre-wrap">{item.content}</span>
       </div>
     )
   }
 
   return (
-    <div className="h-full flex flex-col bg-[#0a1628] text-[13px] leading-relaxed font-mono relative overflow-hidden select-text">
-      {/* CRT scanline overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.2) 2px, rgba(0,0,0,0.2) 3px)',
-        }}
-      />
-
-      {/* Subtle screen glow */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          background:
-            'radial-gradient(ellipse at 50% 30%, rgba(58,109,181,0.04) 0%, transparent 60%)',
-        }}
-      />
-
-      {/* Scrollable content */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 relative z-0">
-        {history.map((item) => renderLine(item))}
+    <div className="h-full flex flex-col bg-[#0a0810] text-[13px] leading-relaxed font-mono relative overflow-hidden select-text">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-4">
+        {displayed.map((item) => renderLine(item))}
       </div>
 
-      {/* Input line */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center px-4 py-2.5 border-t border-[rgba(58,109,181,0.22)] bg-[#0a1628] relative z-0"
+        className="flex items-center px-4 py-2.5 border-t border-[#3a3848] bg-[#0a0810]"
       >
-        <span className="text-[#5aaa7a] mr-1.5 select-none shrink-0">user@stardisk:~$</span>
+        <span className="text-[#5aaa7a] mr-1.5 select-none shrink-0">user@skylaros:~$</span>
         <input
-          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent text-[#e8d5f0] outline-none font-mono text-[13px] placeholder:text-[rgba(120,140,160,0.35)] disabled:opacity-40"
-          placeholder={isTyping ? '正在输出...' : '输入 help 查看命令列表...'}
+          className="flex-1 bg-transparent text-[#d5d0e8] outline-none font-mono text-[13px] placeholder:text-[#3a3850] disabled:opacity-40"
+          placeholder={isRunning ? '正在输出...' : '输入 help 查看命令列表...'}
           autoFocus
-          disabled={isTyping}
+          disabled={isRunning}
           spellCheck={false}
           autoComplete="off"
           autoCapitalize="off"
-        />
-        <span
-          className={`w-[7px] h-[15px] ml-0.5 shrink-0 ${
-            isTyping ? 'opacity-0' : 'bg-[#c8e6c9] animate-pulse'
-          }`}
         />
       </form>
     </div>

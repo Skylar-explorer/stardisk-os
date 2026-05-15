@@ -1,51 +1,48 @@
 [
   {
-    "id": "stardisk",
-    "title": "StarDisk OS",
-    "subtitle": "复古操作系统风格个人网站",
-    "problem": "传统作品集网站千篇一律，无法体现前端工程能力和设计审美",
-    "features": [
-      "完整的桌面窗口管理系统（拖拽、最小化、层级、焦点管理）",
-      "交互式 Terminal 模拟器，支持打字机效果和命令历史",
-      "真实音乐播放器，接入 HTML5 Audio API 实现播放/进度/音量控制",
-      "CD 仓库电影展示，带吸入动画的复古 CD 播放器交互"
+    "id": "skylaros",
+    "title": "SkylarOS",
+    "subtitle": "可以玩的桌面个人站",
+    "painpoint": "通过简历了解一位求职者会有些片面和枯燥",
+    "description": "不只是一个作品集，而是一个真正能操作的桌面操作系统。打开窗口听音乐、翻电影仓库、在终端里敲命令——每个图标点进去都有东西可玩。",
+    "useCases": [
+      "同时打开多个窗口，自由拖拽、最小化、切换焦点",
+      "CD 仓库里选一张光碟，看它吸入播放器、屏幕亮起",
+      "在终端输入 help，看看这个系统里藏着什么命令"
     ],
-    "tags": ["React 18", "Tailwind CSS", "Zustand", "HTML5 Audio"],
-    "color": "#3a6db5",
-    "gradient": "linear-gradient(135deg, #3a6db5, #5a9ad5)",
+    "color": "#c89048",
+    "gradient": "linear-gradient(135deg, #c89048, #e0c078)",
     "link": "https://skylar-explorer.github.io/stardisk-os/",
     "github": "https://github.com/Skylar-explorer/stardisk-os"
   },
   {
     "id": "scout",
     "title": "Scout Research Lab",
-    "subtitle": "学术文献综述辅助工具",
-    "problem": "做系统文献综述时，研究者需要在数千篇论文中手动筛选、比对理论和变量，效率低且易遗漏",
-    "features": [
-      "从 OpenAlex 自动抓取并聚合数千篇学术文献",
-      "多层评分模型（关键词匹配 + 期刊质量 + 引用量）自动分层核心文献",
-      "结构化标注核心文献的理论、变量、方法，识别研究空白",
-      "单文件可视化 Dashboard，支持卡片/列表/选题推荐三种视图"
+    "subtitle": "文献综述的筛选助手",
+    "painpoint": "论文选题困难、文献阅读量大",
+    "description": "做系统文献综述时，帮你从几千篇论文里自动筛出核心文献、标出研究空白，不用一篇篇读摘要也能摸清领域全貌。",
+    "useCases": [
+      "输入研究方向，自动聚合并评分相关文献",
+      "核心文献的理论、变量、方法自动结构化标注",
+      "一眼看到领域里的研究空白和可切入方向"
     ],
-    "tags": ["Python", "OpenAlex API", "数据分析", "Tailwind CSS"],
     "color": "#2d6a4f",
     "gradient": "linear-gradient(135deg, #2d6a4f, #52b788)",
     "link": null,
     "linkNote": "涉及个人学术研究数据，暂不公开演示",
-    "github": "https://github.com/Skylar-explorer/scout-research-lab"
+    "github": null
   },
   {
     "id": "follow-builders",
     "title": "Follow Builders",
-    "subtitle": "AI Builder 追踪摘要",
-    "problem": "AI 领域信息过载，真正有原创观点的 builder 被淹没在重复内容中",
-    "features": [
-      "追踪 top AI builders 的推文、博客动态",
-      "每日自动生成策展摘要，过滤低质量内容",
-      "分层展示（Tier 1/2/3）快速判断内容价值",
-      "GitHub Actions 全自动运行，部署到 GitHub Pages"
+    "subtitle": "AI Builder 动态日报",
+    "painpoint": "X平台关注的技术博主少，且获取信息时效性弱",
+    "description": "每天自动追踪 AI 领域 top builder 的原创内容，过滤掉转发和噪音，早上花 5 分钟就知道昨天发生了什么值得看的事。",
+    "useCases": [
+      "自动追踪 builder 的推文、博客、论文动态",
+      "按内容质量分层，快速判断值不值得深入阅读",
+      "每天早上自动更新，打开链接就是最新一期"
     ],
-    "tags": ["Node.js", "X API", "GitHub Actions", "静态站点"],
     "color": "#a67c52",
     "gradient": "linear-gradient(135deg, #a67c52, #c9a86c)",
     "link": "https://skylar-explorer.github.io/follow-builders-web/",
@@ -55,14 +52,13 @@
     "id": "techdaily",
     "title": "TechDaily",
     "subtitle": "每日技术精选日报",
-    "problem": "技术信息碎片化严重，每天大量博客/论文/新闻发布，手动筛选耗时耗力",
-    "features": [
-      "RSS 聚合多源技术内容（博客、论文、新闻）",
-      "DeepSeek API 自动生成文章摘要、关键要点、深度解读",
-      "杂志级排版单页 HTML，兼顾扫读和深度阅读两种体验",
-      "全自动 pipeline：抓取 → 摘要 → 生成 → 部署"
+    "painpoint": "社媒信息太过嘈杂，Karpathy呼吁回归传统RSS信息订阅方式",
+    "description": "每天自动抓取大佬Karpathy推荐的技术圈博客、论文、新闻，生成一份兼顾扫读和深度阅读的精选日报，不用自己翻社媒也不会漏掉重要信息。",
+    "useCases": [
+      "多源聚合技术内容，自动过滤低质量信息",
+      "每篇文章生成摘要 + 关键要点 + 深度解读",
+      "杂志级排版，手机扫读和电脑精读都舒服"
     ],
-    "tags": ["Python", "DeepSeek API", "RSS", "GitHub Actions"],
     "color": "#8b6f47",
     "gradient": "linear-gradient(135deg, #8b6f47, #b8a07a)",
     "link": "https://skylar-explorer.github.io/techdaily-digest/",

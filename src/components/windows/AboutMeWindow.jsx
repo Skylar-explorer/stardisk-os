@@ -12,27 +12,27 @@ const SUGGESTION_MAP = {
 
 function BrowserChrome({ url, onHome, onBack, canGoBack }) {
   return (
-    <div className="bg-[#e8e4dc] border-b-2 border-[rgba(58,109,181,0.15)] px-3 py-2 flex items-center gap-2 select-none">
+    <div className="bg-retro-surface-light border-b-2 border-[#d0c8c0] px-3 py-2 flex items-center gap-2 select-none">
       <div className="flex gap-1">
         <button
           onClick={onBack}
           disabled={!canGoBack}
-          className="w-7 h-6 flex items-center justify-center text-[12px] rounded border-2 border-white/80 border-r-[rgba(58,109,181,0.25)] border-b-[rgba(58,109,181,0.25)] bg-white/60 disabled:opacity-30 active:border-r-white/80 active:border-b-white/80 active:border-l-[rgba(58,109,181,0.25)] active:border-t-[rgba(58,109,181,0.25)]"
+          className="w-7 h-6 flex items-center justify-center text-[12px] rounded border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] disabled:opacity-30 active:border-r-[#d0c8c0] active:border-b-[#d0c8c0] active:border-l-[#c0b8b0] active:border-t-[#c0b8b0]"
           title="后退"
         >
           ←
         </button>
         <button
           onClick={onHome}
-          className="w-7 h-6 flex items-center justify-center text-[12px] rounded border-2 border-white/80 border-r-[rgba(58,109,181,0.25)] border-b-[rgba(58,109,181,0.25)] bg-white/60 active:border-r-white/80 active:border-b-white/80 active:border-l-[rgba(58,109,181,0.25)] active:border-t-[rgba(58,109,181,0.25)]"
+          className="w-7 h-6 flex items-center justify-center text-[12px] rounded border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] active:border-r-[#d0c8c0] active:border-b-[#d0c8c0] active:border-l-[#c0b8b0] active:border-t-[#c0b8b0]"
           title="主页"
         >
           🏠
         </button>
       </div>
-      <div className="flex-1 flex items-center gap-1.5 bg-white border-2 border-[rgba(58,109,181,0.2)] border-l-white/60 border-t-white/60 rounded px-3 py-[4px] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.06)]">
-        <span className="text-[11px] text-retro-muted">🔒</span>
-        <span className="text-[12px] text-retro-text truncate font-mono">{url}</span>
+      <div className="flex-1 flex items-center gap-1.5 bg-[#121018] border-2 border-[#d0c8c0] border-l-[#c0b8b0] border-t-[#c0b8b0] rounded px-3 py-[4px] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.3)]">
+        <span className="text-[11px] text-[#b09878]">🔒</span>
+        <span className="text-[12px] text-[#f0e4d0] truncate font-mono">{url}</span>
       </div>
     </div>
   )
@@ -40,7 +40,7 @@ function BrowserChrome({ url, onHome, onBack, canGoBack }) {
 
 function StatusBar({ text }) {
   return (
-    <div className="bg-[#e8e4dc] border-t border-[rgba(58,109,181,0.12)] px-3 py-[4px] text-[11px] text-retro-muted flex items-center gap-2 select-none">
+    <div className="bg-retro-surface-light border-t border-[#d0c8c0] px-3 py-[4px] text-[11px] text-[#b09878] flex items-center gap-2 select-none">
       <span>{text}</span>
       <span className="ml-auto">🌐 已连接</span>
     </div>
@@ -71,7 +71,7 @@ function CopyButton({ text }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-[10px] px-2 py-[2px] rounded border border-[rgba(58,109,181,0.2)] bg-white/60 text-retro-muted hover:text-retro-text hover:border-[rgba(58,109,181,0.4)] transition-all ml-2"
+      className="text-[10px] px-2 py-[2px] rounded border border-[#d0c8c0] bg-[#d8d0c8] text-retro-muted hover:text-retro-text hover:border-[#b0a8a0] transition-all ml-2"
     >
       {copied ? '✅ 已复制' : '📋 复制'}
     </button>
@@ -102,9 +102,9 @@ function HomePage({ onSearch, suggestions }) {
         <div
           className="text-[36px] font-bold tracking-tight mb-2"
           style={{
-            color: '#3a6db5',
+            color: '#c89048',
             fontFamily: "'VT323', monospace",
-            textShadow: '0 0 10px rgba(58,109,181,0.12)',
+            textShadow: '0 0 10px rgba(200,144,72,0.12)',
           }}
         >
           AboutMe Search
@@ -113,18 +113,18 @@ function HomePage({ onSearch, suggestions }) {
       </div>
 
       <form onSubmit={handleSubmit} className="w-full max-w-[480px] mb-5">
-        <div className="flex border-2 border-[rgba(58,109,181,0.3)] border-r-white/80 border-b-white/80 rounded-[4px] overflow-hidden shadow-[0_2px_8px_rgba(58,109,181,0.1)] bg-white">
+        <div className="flex border-2 border-[#c0b8b0] border-r-[#d0c8c0] border-b-[#d0c8c0] rounded-[4px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.2)] bg-[#121018]">
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="输入你想了解的内容..."
-            className="flex-1 px-4 py-2.5 text-[14px] text-retro-text bg-transparent outline-none placeholder:text-retro-muted/40"
+            className="flex-1 px-4 py-2.5 text-[14px] text-[#f0e4d0] bg-transparent outline-none placeholder:text-[#c0b8b0]"
           />
           <button
             type="submit"
-            className="px-4 text-[13px] bg-[#3a6db5] text-white hover:bg-[#2d5a9a] transition-colors"
+            className="px-4 text-[13px] bg-[#c89048] text-white hover:bg-[#c89048] transition-colors"
           >
             搜索
           </button>
@@ -138,7 +138,7 @@ function HomePage({ onSearch, suggestions }) {
             <button
               key={s}
               onClick={() => handleSuggestionClick(s)}
-              className="text-[12px] px-3 py-[4px] rounded-full border border-[rgba(58,109,181,0.18)] text-retro-text bg-white/60 hover:bg-white hover:border-[rgba(58,109,181,0.35)] hover:shadow-[0_1px_4px_rgba(58,109,181,0.1)] transition-all"
+              className="text-[12px] px-3 py-[4px] rounded-full border border-[#d0c8c0] text-retro-text bg-[#d8d0c8] hover:bg-[#c8c0b8] hover:border-[rgba(200,144,72,0.35)] hover:shadow-[0_1px_4px_rgba(0,0,0,0.15)] transition-all"
             >
               {s}
             </button>
@@ -154,31 +154,31 @@ function BaiduCard({ result, onOpenDetail }) {
   const introText = introBlock?.text || result.summary
 
   return (
-    <div className="bg-white/80 border-2 border-[rgba(58,109,181,0.15)] border-r-white/80 border-b-white/80 rounded-[5px] p-4 shadow-[0_2px_8px_rgba(58,109,181,0.08)] mb-5">
-      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[rgba(58,109,181,0.1)]">
+    <div className="bg-[#4a3a2a] border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] rounded-[5px] p-4 shadow-[0_2px_8px_rgba(0,0,0,0.2)] mb-5">
+      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#e8e0d4]">
         <span className="text-[16px]">📖</span>
-        <span className="text-[13px] font-bold text-retro-text">{result.title}</span>
-        <span className="text-[10px] px-1.5 py-[1px] rounded bg-[#3a6db5]/10 text-[#3a6db5] ml-auto">百度百科</span>
+        <span className="text-[13px] font-bold text-[#f0e4d0]">{result.title}</span>
+        <span className="text-[10px] px-1.5 py-[1px] rounded bg-[#e8e0d4] text-[#c89048] ml-auto">百度百科</span>
       </div>
 
       <div className="flex gap-4">
         <div className="shrink-0">
-          <div className="w-[110px] h-[140px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
+          <div className="w-[110px] h-[140px] rounded-[4px] overflow-hidden border border-[#d0c8c0] bg-[#121018]">
             <img
               src={import.meta.env.BASE_URL + (result.image || 'images/avatar.png')}
               alt="Skylar"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
+          <div className="text-[10px] text-[#b09878] text-center mt-1">Skylar 人物照</div>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[12px] text-retro-text leading-relaxed">
+          <div className="text-[12px] text-[#f0e4d0] leading-relaxed">
             {introText}
           </div>
           <button
             onClick={() => onOpenDetail(0)}
-            className="text-[11px] text-[#1a0dab] hover:underline mt-2 inline-block"
+            className="text-[11px] text-retro-accent hover:underline mt-2 inline-block"
           >
             查看详情 →
           </button>
@@ -219,13 +219,13 @@ function SearchResults({ query, results, onOpenDetail }) {
                 <div className="flex items-start gap-3">
                   <span className="text-[18px] mt-0.5 shrink-0">{result.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[14px] text-[#1a0dab] group-hover:underline leading-snug font-medium">
+                    <div className="text-[14px] text-retro-accent group-hover:underline leading-snug font-medium">
                       {result.title}
                     </div>
-                    <div className="text-[11px] text-[#006621] leading-snug truncate">
+                    <div className="text-[11px] text-retro-muted leading-snug truncate">
                       {result.url}
                     </div>
-                    <div className="text-[12px] text-[#545454] leading-relaxed mt-0.5">
+                    <div className="text-[12px] text-retro-muted leading-relaxed mt-0.5">
                       {result.summary}
                     </div>
                   </div>
@@ -235,7 +235,7 @@ function SearchResults({ query, results, onOpenDetail }) {
           })}
         </div>
 
-        <div className="mt-6 pt-4 border-t border-[rgba(58,109,181,0.1)]">
+        <div className="mt-6 pt-4 border-t border-[#e8e0d4]">
           <div className="text-[11px] text-retro-muted text-center">
             🌀 AboutMe Search · 仅索引关于 Skylar 的公开信息
           </div>
@@ -252,21 +252,21 @@ function ContentRenderer({ content }) {
         switch (block.type) {
           case 'heading':
             return (
-              <div key={i} className="text-[16px] font-bold text-retro-text flex items-center gap-2">
-                <span className="w-[3px] h-[16px] bg-[#3a6db5] rounded-full" />
+              <div key={i} className="text-[16px] font-bold text-[#f0e4d0] flex items-center gap-2">
+                <span className="w-[3px] h-[16px] bg-[#c89048] rounded-full" />
                 {block.text}
               </div>
             )
           case 'paragraph':
             return (
-              <p key={i} className="text-[13px] text-retro-text leading-relaxed pl-[11px]">
+              <p key={i} className="text-[13px] text-[#f0e4d0] leading-relaxed pl-[11px]">
                 {block.text}
               </p>
             )
           case 'quote':
             return (
-              <div key={i} className="pl-[11px] border-l-2 border-[#3a6db5]/20 py-1">
-                <p className="text-[13px] text-retro-text/80 italic leading-relaxed">
+              <div key={i} className="pl-[11px] border-l-2 border-[#c89048]/20 py-1">
+                <p className="text-[13px] text-[#b09878] italic leading-relaxed">
                   "{block.text}"
                 </p>
               </div>
@@ -274,10 +274,10 @@ function ContentRenderer({ content }) {
           case 'tag':
             return (
               <div key={i} className="flex items-center gap-2 pl-[11px]">
-                <span className="text-[11px] px-2.5 py-[3px] rounded bg-[#3a6db5]/10 text-[#3a6db5] font-semibold border border-[#3a6db5]/20">
+                <span className="text-[11px] px-2.5 py-[3px] rounded bg-[#e8e0d4] text-[#c89048] font-semibold border border-[#d0c8c0]">
                   {block.label}
                 </span>
-                <span className="text-[13px] text-retro-text">{block.value}</span>
+                <span className="text-[13px] text-[#f0e4d0]">{block.value}</span>
               </div>
             )
           case 'badge':
@@ -286,7 +286,7 @@ function ContentRenderer({ content }) {
                 {block.items.map((item, j) => (
                   <span
                     key={j}
-                    className="text-[11px] px-2.5 py-[3px] rounded-full border border-[rgba(58,109,181,0.15)] text-retro-muted bg-white/50"
+                    className="text-[11px] px-2.5 py-[3px] rounded-full border border-[#d0c8c0] text-retro-muted bg-[#d8d0c8]"
                   >
                     {item}
                   </span>
@@ -297,12 +297,12 @@ function ContentRenderer({ content }) {
             return (
               <div key={i} className="pl-[11px] space-y-4">
                 {block.items.map((item, j) => (
-                  <div key={j} className="relative pl-5 border-l-2 border-[rgba(58,109,181,0.2)]">
-                    <div className="absolute left-[-5px] top-[6px] w-[8px] h-[8px] rounded-full bg-[#3a6db5]/30 border-2 border-white" />
-                    <div className="text-[11px] text-retro-muted mb-0.5">{item.period}</div>
-                    <div className="text-[13px] font-semibold text-retro-text">{item.company}</div>
-                    <div className="text-[12px] text-retro-muted">{item.role}</div>
-                    {item.desc && <div className="text-[12px] text-retro-text/80 mt-1">{item.desc}</div>}
+                  <div key={j} className="relative pl-5 border-l-2 border-[#d0c8c0]">
+                    <div className="absolute left-[-5px] top-[6px] w-[8px] h-[8px] rounded-full bg-[#d0c8c0] border-2 border-[#2a2018]" />
+                    <div className="text-[11px] text-[#b09878] mb-0.5">{item.period}</div>
+                    <div className="text-[13px] font-semibold text-[#f0e4d0]">{item.company}</div>
+                    <div className="text-[12px] text-[#b09878]">{item.role}</div>
+                    {item.desc && <div className="text-[12px] text-[#b09878] mt-1">{item.desc}</div>}
                   </div>
                 ))}
               </div>
@@ -311,16 +311,16 @@ function ContentRenderer({ content }) {
             return (
               <div key={i} className="pl-[11px]">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[11px] text-retro-muted w-12 shrink-0">{block.label}</span>
+                  <span className="text-[11px] text-[#b09878] w-12 shrink-0">{block.label}</span>
                   {block.link && block.link !== '#' ? (
                     <a
                       href={block.link}
-                      className="text-[14px] text-[#1a0dab] hover:underline font-medium"
+                      className="text-[14px] text-retro-accent hover:underline font-medium"
                     >
                       {block.value}
                     </a>
                   ) : (
-                    <span className="text-[14px] text-retro-text font-medium">{block.value}</span>
+                    <span className="text-[14px] text-[#f0e4d0] font-medium">{block.value}</span>
                   )}
                   <CopyButton text={block.value} />
                 </div>
@@ -330,17 +330,17 @@ function ContentRenderer({ content }) {
             return (
               <div key={i} className="flex gap-4">
                 <div className="shrink-0">
-                  <div className="w-[120px] h-[150px] rounded-[4px] overflow-hidden border border-[rgba(58,109,181,0.15)] bg-white">
+                  <div className="w-[120px] h-[150px] rounded-[4px] overflow-hidden border border-[#d0c8c0] bg-[#121018]">
                     <img
                       src={import.meta.env.BASE_URL + 'images/avatar.png'}
                       alt="Skylar"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="text-[10px] text-retro-muted text-center mt-1">Skylar 人物照</div>
+                  <div className="text-[10px] text-[#b09878] text-center mt-1">Skylar 人物照</div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-[13px] text-retro-text leading-relaxed">
+                  <div className="text-[13px] text-[#f0e4d0] leading-relaxed">
                     {block.text}
                   </div>
                 </div>
@@ -353,7 +353,7 @@ function ContentRenderer({ content }) {
                   href={import.meta.env.BASE_URL + 'resume.pdf'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[13px] text-[#1a0dab] hover:underline font-medium px-3 py-1.5 rounded border border-[rgba(58,109,181,0.15)] bg-white/50 hover:bg-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-[13px] text-retro-accent hover:underline font-medium px-3 py-1.5 rounded border border-[#d0c8c0] bg-[#d8d0c8] hover:bg-[#c8c0b8] transition-colors"
                 >
                   <span>📎</span>
                   戳此查看简历
@@ -379,24 +379,24 @@ function DetailPage({ result, onBack }) {
         <div className="flex items-center gap-2 mb-4">
           <button
             onClick={onBack}
-            className="text-[12px] px-2.5 py-[4px] rounded border-2 border-white/80 border-r-[rgba(58,109,181,0.2)] border-b-[rgba(58,109,181,0.2)] bg-white/60 text-retro-muted hover:text-retro-text transition-colors"
+            className="text-[12px] px-2.5 py-[4px] rounded border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] text-retro-muted hover:text-retro-text transition-colors"
           >
             ← 返回搜索结果
           </button>
           <span className="text-[11px] text-retro-muted">搜索结果</span>
         </div>
 
-        <div className="bg-white/70 border-2 border-[rgba(58,109,181,0.12)] border-r-white/80 border-b-white/80 rounded-[5px] p-5 shadow-[0_2px_8px_rgba(58,109,181,0.06)]">
-          <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-[rgba(58,109,181,0.1)]">
+        <div className="bg-[#4a3a2a] border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] rounded-[5px] p-5 shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
+          <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-[#e8e0d4]">
             <span className="text-[20px]">{result.icon}</span>
             <div>
-              <h1 className="text-[16px] font-bold text-retro-text">{result.title}</h1>
-              <div className="text-[11px] text-retro-muted">{result.url}</div>
+              <h1 className="text-[16px] font-bold text-[#f0e4d0]">{result.title}</h1>
+              <div className="text-[11px] text-[#b09878]">{result.url}</div>
             </div>
           </div>
 
           {isBaidu && (
-            <div className="mb-3 px-2 py-1 bg-[#f0f7ff] rounded text-[10px] text-[#3a6db5] font-medium inline-block">
+            <div className="mb-3 px-2 py-1 bg-[#d8d0c8] rounded text-[10px] text-[#c89048] font-medium inline-block">
               📖 百度百科风格词条
             </div>
           )}
@@ -493,7 +493,7 @@ export default function AboutMeWindow() {
   const canGoBack = view !== 'home'
 
   return (
-    <div className="h-full flex flex-col bg-[#f5f3ee]">
+    <div className="h-full flex flex-col bg-retro-surface">
       <BrowserChrome
         url={getUrl()}
         onHome={handleHome}

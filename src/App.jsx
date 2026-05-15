@@ -11,6 +11,7 @@ import TerminalWindow from './components/windows/TerminalWindow'
 import MusicPlayerWindow from './components/windows/MusicPlayerWindow'
 import ProjectsWindow from './components/windows/ProjectsWindow'
 import ResourcesWindow from './components/windows/ResourcesWindow'
+import ResourcesFolderWindow from './components/windows/ResourcesFolderWindow'
 import MovieListWindow from './components/windows/MovieListWindow'
 import HahaMomentWindow from './components/windows/HahaMomentWindow'
 import PuppyWindow from './components/windows/PuppyWindow'
@@ -21,6 +22,7 @@ const windowComponents = {
   music: MusicPlayerWindow,
   projects: ProjectsWindow,
   resources: ResourcesWindow,
+  resourcesFolder: ResourcesFolderWindow,
   movies: MovieListWindow,
   haha: HahaMomentWindow,
   puppy: PuppyWindow,
@@ -41,18 +43,22 @@ export default function App() {
         {windows
           .filter((w) => w.isOpen)
           .map((win) => {
-            const Component = windowComponents[win.id]
+            const Component = windowComponents[win.component || win.id]
             if (!Component) return null
             return (
               <motion.div
                 key={win.id}
-                initial={{ scale: 0.85, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.8, opacity: 0, y: 20 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                initial={{ scale: 0.7, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 25, mass: 0.8 }}
               >
                 <WindowFrame win={win}>
-                  <Component />
+                  {win.component === 'resourcesFolder' ? (
+                    <Component category={win.category} />
+                  ) : (
+                    <Component />
+                  )}
                 </WindowFrame>
               </motion.div>
             )

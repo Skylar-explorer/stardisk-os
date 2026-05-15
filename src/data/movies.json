@@ -106,5 +106,17 @@
     "month": "2026-04",
     "poster": "images/movies/挽救计划.png",
     "rotate": -2
+  },
+  {
+    "id": 10,
+    "title": "The Drama",
+    "originalTitle": "The Drama",
+    "year": 2026,
+    "director": "Kristoffer Borgli",
+    "rating": 4,
+    "comment": "Witness the wedding of the year.",
+    "month": "2026-04",
+    "poster": "images/movies/The_Drama.png",
+    "rotate": 2
   }
 ]

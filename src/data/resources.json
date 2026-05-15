@@ -2,113 +2,319 @@
   {
     "id": "x-1",
     "title": "karpathy",
-    "description": "前 Tesla AI Director，OpenAI 创始成员。发推极简但信息量极大，每次都能学到新东西。",
     "url": "https://x.com/karpathy",
     "category": "X"
   },
   {
     "id": "x-2",
-    "title": "swyx",
-    "description": "Latent Space 主播，AI 工程化方向观察很准。Latent Space 通讯和播客质量都很高。",
-    "url": "https://x.com/swyx",
+    "title": "sama",
+    "url": "https://x.com/sama",
     "category": "X"
   },
   {
     "id": "x-3",
-    "title": "Simon Willison",
-    "description": "Datasette 作者，AI 工具化实践的标杆。他的 blog 和推特都是动手派的学习素材。",
-    "url": "https://x.com/simonw",
+    "title": "brian_armstrong",
+    "url": "https://x.com/brian_armstrong",
     "category": "X"
   },
   {
     "id": "x-4",
-    "title": "Andrej Karpathy 中文搬运",
-    "description": "国内有团队在做 karpathy 内容的中文翻译和解读，降低阅读门槛。",
-    "url": "https://x.com",
+    "title": "stevenbjohnson",
+    "url": "https://x.com/stevenbjohnson",
     "category": "X"
   },
   {
-    "id": "podcast-1",
-    "title": "Latent Space",
-    "description": "AI 工程 + 产品方向最好的英文播客。深度访谈，每期 1.5h 起步，适合通勤听。",
-    "url": "https://www.latent.space",
-    "category": "播客"
+    "id": "x-5",
+    "title": "ilyasut",
+    "url": "https://x.com/ilyasut",
+    "category": "X"
   },
   {
-    "id": "podcast-2",
-    "title": "纵横四海",
-    "description": "人类使用说明书。每期拆一本书，从脑科学、心理学到社会学，知识密度极高。",
-    "url": "https://www.xiaoyuzhoufm.com/podcast/62333613b03acan3u",
-    "category": "播客"
+    "id": "x-6",
+    "title": "drfeifei",
+    "url": "https://x.com/drfeifei",
+    "category": "X"
   },
   {
-    "id": "podcast-3",
-    "title": "忽左忽右",
-    "description": "文化类播客，历史、政治、国际关系都有涉及。拓宽认知边界的好素材。",
-    "url": "https://www.xiaoyuzhoufm.com/podcast/5e7bd359418a84a046e3ec49",
-    "category": "播客"
+    "id": "x-7",
+    "title": "arankomatsuzaki",
+    "url": "https://x.com/arankomatsuzaki",
+    "category": "X"
   },
   {
-    "id": "podcast-4",
-    "title": "AI 炼金术",
-    "description": "国内 AI 产品人做的播客，聊 AI 产品设计和商业落地，很接地气。",
-    "url": "https://www.xiaoyuzhoufm.com",
-    "category": "播客"
+    "id": "x-8",
+    "title": "MatthewBerman",
+    "url": "https://x.com/MatthewBerman",
+    "category": "X"
   },
   {
-    "id": "wechat-1",
-    "title": "机器之心",
-    "description": "国内 AI 资讯最全的媒体之一，论文解读、行业动态、产品发布都覆盖。",
-    "url": "https://mp.weixin.qq.com",
-    "category": "公众号"
+    "id": "x-9",
+    "title": "ciguleva",
+    "url": "https://x.com/ciguleva",
+    "category": "X"
   },
   {
-    "id": "wechat-2",
-    "title": "AI 大模型日报",
-    "description": "每天汇总 AI 领域的重要论文、产品、投融资信息，信息密度高。",
-    "url": "https://mp.weixin.qq.com",
-    "category": "公众号"
+    "id": "x-10",
+    "title": "zarazhangrui",
+    "url": "https://x.com/zarazhangrui",
+    "category": "X"
   },
   {
-    "id": "wechat-3",
-    "title": "晚点LatePost",
-    "description": "互联网商业报道最深入的媒体。美团、快手、智谱这些公司的报道都很有料。",
-    "url": "https://mp.weixin.qq.com",
-    "category": "公众号"
+    "id": "x-11",
+    "title": "HarryStebbings",
+    "url": "https://x.com/HarryStebbings",
+    "category": "X"
   },
   {
-    "id": "wechat-4",
-    "title": "产品沉思录",
-    "description": "产品经理的 newsletter，每期围绕一个主题深度思考，对我做产品启发很大。",
-    "url": "https://mp.weixin.qq.com",
-    "category": "公众号"
+    "id": "x-12",
+    "title": "lennysan",
+    "url": "https://x.com/lennysan",
+    "category": "X"
+  },
+  {
+    "id": "x-13",
+    "title": "petergyang",
+    "url": "https://x.com/petergyang",
+    "category": "X"
+  },
+  {
+    "id": "x-14",
+    "title": "venturetwins",
+    "url": "https://x.com/venturetwins",
+    "category": "X"
+  },
+  {
+    "id": "x-15",
+    "title": "gregisenberg",
+    "url": "https://x.com/gregisenberg",
+    "category": "X"
+  },
+  {
+    "id": "x-16",
+    "title": "gabriel1",
+    "url": "https://x.com/gabriel1",
+    "category": "X"
+  },
+  {
+    "id": "x-17",
+    "title": "LyalinDotCom",
+    "url": "https://x.com/LyalinDotCom",
+    "category": "X"
+  },
+  {
+    "id": "x-18",
+    "title": "guohao_li",
+    "url": "https://x.com/guohao_li",
+    "category": "X"
+  },
+  {
+    "id": "x-19",
+    "title": "JustinLin610",
+    "url": "https://x.com/JustinLin610",
+    "category": "X"
+  },
+  {
+    "id": "x-20",
+    "title": "ashleymayer",
+    "url": "https://x.com/ashleymayer",
+    "category": "X"
+  },
+  {
+    "id": "x-21",
+    "title": "_chenglou",
+    "url": "https://x.com/_chenglou",
+    "category": "X"
+  },
+  {
+    "id": "x-22",
+    "title": "Flomerboy",
+    "url": "https://x.com/Flomerboy",
+    "category": "X"
+  },
+  {
+    "id": "x-23",
+    "title": "ruima",
+    "url": "https://x.com/ruima",
+    "category": "X"
+  },
+  {
+    "id": "x-24",
+    "title": "andrew_n_carr",
+    "url": "https://x.com/andrew_n_carr",
+    "category": "X"
   },
   {
     "id": "youtube-1",
-    "title": "Two Minute Papers",
-    "description": "用最短的时间讲清楚最新的 AI 论文。画面精美，节奏快，适合快速扫读领域进展。",
-    "url": "https://www.youtube.com/@TwoMinutePapers",
+    "title": "Yao Shunyu: Let Me Go a Little Crazy! Training Models at Anthropic & Gemini, Heroism Is Over",
+    "url": "https://youtu.be/ttkd0t5qTD4",
     "category": "YouTube"
   },
   {
     "id": "youtube-2",
-    "title": "Yannic Kilcher",
-    "description": "深度学习论文精读。比 Two Minute Papers 更深，适合想真正理解论文的人。",
-    "url": "https://www.youtube.com/@YannicKilcher",
+    "title": "翁家翌：OpenAI，GPT，强化学习，Infra，后训练，天授，tuixue，开源，CMU，清华｜WhynotTV Podcast #4",
+    "url": "https://youtu.be/I0DrcsDf3Os",
     "category": "YouTube"
   },
   {
     "id": "youtube-3",
-    "title": "Fireship",
-    "description": "技术速通型频道，100 秒讲清楚一个技术概念。前端、后端、AI 都有覆盖。",
-    "url": "https://www.youtube.com/@Fireship",
+    "title": "Amanda Askell on AI Consciousness, Claude & Silicon Valley's Biggest Fear",
+    "url": "https://youtu.be/0GaKJ4Fp2x4",
     "category": "YouTube"
   },
   {
     "id": "youtube-4",
-    "title": "3Blue1Brown",
-    "description": "数学可视化天花板。线性代数、微积分、神经网络都讲得极漂亮，真正理解数学。",
-    "url": "https://www.youtube.com/@3blue1brown",
+    "title": "I vibe coded a $20K/month mobile app in 14 days",
+    "url": "https://youtu.be/CwHD6Fg-Mjs",
     "category": "YouTube"
+  },
+  {
+    "id": "youtube-5",
+    "title": "Andrew Ng: Building Faster with AI",
+    "url": "https://youtu.be/RNJCfif1dPY",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-6",
+    "title": "From Idea to $650M Exit: Lessons in Building AI Startups",
+    "url": "https://youtu.be/l0h3nAW13ao",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-7",
+    "title": "Solo founder, $80M exit, 6 months: The Base44 bootstrapped startup success story | Maor Shlomo",
+    "url": "https://youtu.be/L9KvV_UOs3A",
+    "category": "YouTube"
+  },
+  {
+    "id": "youtube-8",
+    "title": "How To Build A Company With AI From The Ground Up",
+    "url": "https://youtu.be/EN7frwQIbKc",
+    "category": "YouTube"
+  },
+  {
+    "id": "podcast-1",
+    "title": "十字路口Crossing",
+    "url": "https://podcasts.apple.com/cn/podcast/%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3crossing/id1729552193",
+    "category": "播客",
+    "image": "images/resources/podcast-crossing.png"
+  },
+  {
+    "id": "podcast-2",
+    "title": "张小珺",
+    "url": "https://podcasts.apple.com/cn/podcast/%E5%BC%A0%E5%B0%8F%E7%8F%BAj%C3%B9n-%E5%95%86%E4%B8%9A%E8%AE%BF%E8%B0%88%E5%BD%95/id1634356920",
+    "category": "播客",
+    "image": "images/resources/podcast-zhangxiaojun.png"
+  },
+  {
+    "id": "podcast-3",
+    "title": "硅谷101",
+    "url": "https://podcasts.apple.com/cn/podcast/%E7%A1%85%E8%B0%B7101/id1498541229",
+    "category": "播客",
+    "image": "images/resources/podcast-guigu101.png"
+  },
+  {
+    "id": "podcast-4",
+    "title": "晚点聊LateTalk",
+    "url": "https://podcasts.apple.com/cn/podcast/%E6%99%9A%E7%82%B9%E8%81%8A-latetalk/id1564877433",
+    "category": "播客",
+    "image": "images/resources/podcast-latetalk.png"
+  },
+  {
+    "id": "podcast-5",
+    "title": "42章经",
+    "url": "https://podcasts.apple.com/cn/podcast/42%E7%AB%A0%E7%BB%8F/id1700299886",
+    "category": "播客",
+    "image": "images/resources/podcast-42zhangjing.png"
+  },
+  {
+    "id": "podcast-6",
+    "title": "AI炼金术",
+    "url": "https://podcasts.apple.com/cn/podcast/ai%E7%82%BC%E9%87%91%E6%9C%AF/id1671502201",
+    "category": "播客",
+    "image": "images/resources/podcast-ai-lianjinshu.png"
+  },
+  {
+    "id": "wechat-1",
+    "title": "数字生命卡兹克",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-shuzishengming.jpg"
+  },
+  {
+    "id": "wechat-2",
+    "title": "量子位",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-liangziwei.jpg"
+  },
+  {
+    "id": "wechat-3",
+    "title": "花叔",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-huashu.jpg"
+  },
+  {
+    "id": "wechat-4",
+    "title": "赛博禅心",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-saibochanxin.jpg"
+  },
+  {
+    "id": "wechat-5",
+    "title": "36氪",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-36ke.jpg"
+  },
+  {
+    "id": "wechat-6",
+    "title": "特工宇宙",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-tegongyuzhou.jpg"
+  },
+  {
+    "id": "wechat-7",
+    "title": "42章经",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-42zhangjing.jpg"
+  },
+  {
+    "id": "wechat-8",
+    "title": "InfoQ",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-infoq.jpg"
+  },
+  {
+    "id": "wechat-9",
+    "title": "新智元",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-xinzhiyuan.jpg"
+  },
+  {
+    "id": "wechat-10",
+    "title": "AI异类弗兰克",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-ai-yilifulanke.jpg"
+  },
+  {
+    "id": "wechat-11",
+    "title": "机器之心",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-jiqizhixin.jpg"
+  },
+  {
+    "id": "wechat-12",
+    "title": "Founder Park",
+    "url": "#",
+    "category": "公众号",
+    "image": "images/resources/wechat-founder-park.jpg"
   }
 ]

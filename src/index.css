@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'JasonHandwriting';
+  src: url('/fonts/JasonHandwriting.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +17,7 @@
 }
 
 body {
-  font-family: 'VT323', 'Courier New', monospace;
+  font-family: 'Kalam', 'JasonHandwriting', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   background-image: url('/images/wallpaper.png');
   background-size: cover;
   background-position: center;
@@ -53,8 +61,8 @@ body::before {
   height: 100%;
   background: repeating-linear-gradient(
     0deg,
-    rgba(60, 80, 40, 0.03) 0px,
-    rgba(60, 80, 40, 0.03) 1px,
+    rgba(0, 0, 0, 0.035) 0px,
+    rgba(0, 0, 0, 0.035) 1px,
     transparent 1px,
     transparent 3px
   );
@@ -71,11 +79,20 @@ body::before {
   height: 100%;
   background: radial-gradient(
     ellipse at center,
-    transparent 40%,
-    rgba(180, 190, 100, 0.08) 100%
+    transparent 55%,
+    rgba(0, 0, 0, 0.18) 100%
   );
   pointer-events: none;
   z-index: 9998;
+}
+
+/* Terminal output fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.18s ease-out;
 }
 
 /* Scrollbar styling */
@@ -83,9 +100,9 @@ body::before {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(220, 224, 115, 0.3);
+  background: rgba(255, 255, 255, 0.08);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3a6db5;
+  background: #c89048;
   border-radius: 2px;
 }

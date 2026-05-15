@@ -18,7 +18,7 @@ function SpinningCover({ isPlaying, progressPercent, track }) {
           cy={(size + 16) / 2}
           r={radius}
           fill="none"
-          stroke="rgba(58,109,181,0.15)"
+          stroke="rgba(200,144,72,0.15)"
           strokeWidth="2"
         />
         <circle
@@ -26,7 +26,7 @@ function SpinningCover({ isPlaying, progressPercent, track }) {
           cy={(size + 16) / 2}
           r={radius}
           fill="none"
-          stroke="#3a6db5"
+          stroke="#c89048"
           strokeWidth="2"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
@@ -53,7 +53,7 @@ function SpinningCover({ isPlaying, progressPercent, track }) {
             draggable={false}
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-retro-bg to-[#c8d060] flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-br from-retro-bg to-[#8a7d6e] flex items-center justify-center">
             <span className="text-[28px]">🎵</span>
           </div>
         )}
@@ -102,7 +102,7 @@ export default function MusicPlayerWindow() {
       <div className="text-[12px] text-retro-text mb-1 text-center">
         <div className="font-bold truncate">{currentTrack?.title || 'No Track'}</div>
         <div className="text-retro-muted truncate">{currentTrack?.artist || 'Unknown'}</div>
-        <div className="text-[10px] text-retro-muted/70 truncate">{currentTrack?.album || ''}</div>
+        <div className="text-[10px] text-[#9a8d80] truncate">{currentTrack?.album || ''}</div>
       </div>
 
       {/* Vinyl Record */}
@@ -113,10 +113,10 @@ export default function MusicPlayerWindow() {
       {/* Progress */}
       <div className="mb-2.5">
         <div
-          className="h-3 bg-white/70 border-2 border-[rgba(58,109,181,0.3)] border-r-white/80 border-b-white/80 relative my-1 rounded-[3px] cursor-pointer"
+          className="h-3 bg-[#121018] border-2 border-[#c0b8b0] border-r-[#121018] border-b-[#121018] relative my-1 rounded-[3px] cursor-pointer"
           onClick={handleSeek}
         >
-          <div className="h-full bg-gradient-to-r from-retro-blue to-retro-blue-light rounded-[1px]" style={{ width: `${progressPercent}%` }} />
+          <div className="h-full bg-gradient-to-r from-retro-accent to-retro-accent-light rounded-[1px]" style={{ width: `${progressPercent}%` }} />
         </div>
         <div className="flex justify-between text-[11px] text-retro-muted">
           <span>{formatTime(progress)}</span>
@@ -126,16 +126,16 @@ export default function MusicPlayerWindow() {
 
       {/* Controls */}
       <div className="flex justify-center gap-2.5 mb-2.5">
-        <button onClick={prev} className="px-3 py-[3px] text-[11px] tracking-wider border-2 border-white/90 border-r-[rgba(58,109,181,0.3)] border-b-[rgba(58,109,181,0.3)] bg-white/60 text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(58,109,181,0.1)] active:border-r-white/90 active:border-b-white/90 active:border-l-[rgba(58,109,181,0.3)] active:border-t-[rgba(58,109,181,0.3)]">
+        <button onClick={prev} className="px-3 py-[3px] text-[11px] tracking-wider border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.2)] active:border-r-[#121018] active:border-b-[#121018] active:border-l-[#c0b8b0] active:border-t-[#c0b8b0]">
           ⏮
         </button>
         <button
           onClick={() => isPlaying ? pause() : play()}
-          className="px-4 py-[3px] text-[11px] tracking-wider border-2 border-white/90 border-r-[rgba(58,109,181,0.3)] border-b-[rgba(58,109,181,0.3)] bg-white/60 text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(58,109,181,0.1)] active:border-r-white/90 active:border-b-white/90 active:border-l-[rgba(58,109,181,0.3)] active:border-t-[rgba(58,109,181,0.3)]"
+          className="px-4 py-[3px] text-[11px] tracking-wider border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.2)] active:border-r-[#121018] active:border-b-[#121018] active:border-l-[#c0b8b0] active:border-t-[#c0b8b0]"
         >
           {isPlaying ? '⏸' : '▶'}
         </button>
-        <button onClick={next} className="px-3 py-[3px] text-[11px] tracking-wider border-2 border-white/90 border-r-[rgba(58,109,181,0.3)] border-b-[rgba(58,109,181,0.3)] bg-white/60 text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(58,109,181,0.1)] active:border-r-white/90 active:border-b-white/90 active:border-l-[rgba(58,109,181,0.3)] active:border-t-[rgba(58,109,181,0.3)]">
+        <button onClick={next} className="px-3 py-[3px] text-[11px] tracking-wider border-2 border-[#d0c8c0] border-r-[#d0c8c0] border-b-[#d0c8c0] bg-[#d8d0c8] text-retro-text rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.2)] active:border-r-[#121018] active:border-b-[#121018] active:border-l-[#c0b8b0] active:border-t-[#c0b8b0]">
           ⏭
         </button>
       </div>
@@ -152,20 +152,20 @@ export default function MusicPlayerWindow() {
           step="0.1"
           value={volume}
           onChange={(e) => setVolume(parseFloat(e.target.value))}
-          className="flex-1 h-1.5 accent-retro-blue"
+          className="flex-1 h-1.5 accent-retro-accent"
         />
       </div>
 
       {/* Playlist */}
       <div className="text-[13px] text-retro-muted mb-1 font-bold tracking-wider">PLAYLIST</div>
-      <div className="border-2 border-[rgba(58,109,181,0.3)] border-r-white/80 border-b-white/80 bg-white/60 rounded-[3px] overflow-auto flex-1">
+      <div className="border-2 border-[#c0b8b0] border-r-[#121018] border-b-[#121018] bg-[#d8d0c8] rounded-[3px] overflow-auto flex-1">
         {playlist.map((track, i) => (
           <div
             key={i}
             className={`px-1.5 py-[3px] text-[11px] flex items-center gap-1.5 cursor-pointer rounded-[1px] ${
               i === currentIndex
-                ? 'bg-gradient-to-r from-[#c898d0] to-[#d4a8d8] text-white'
-                : 'text-retro-text hover:bg-[rgba(58,109,181,0.12)] hover:text-[#1a4a7a]'
+                ? 'bg-gradient-to-r from-retro-accent to-retro-accent-light text-[#121018]'
+                : 'text-retro-text hover:bg-[#c8c0b8] hover:text-retro-accent'
             }`}
             onClick={() => setCurrentIndex(i)}
           >
@@ -179,7 +179,7 @@ export default function MusicPlayerWindow() {
             )}
             <div className="flex-1 min-w-0">
               <div className="truncate leading-tight">{track.title}</div>
-              <div className="truncate text-[9px] opacity-70">{track.artist}</div>
+              <div className={`truncate text-[9px] ${i === currentIndex ? 'text-[#3a2a1a]' : 'text-[#8a7d6e]'}`}>{track.artist}</div>
             </div>
             {i === currentIndex && <span className="shrink-0 ml-1">▶</span>}
           </div>

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 
-function DiscIcon({ size = 52 }) {
+function DiscIcon({ size = 64 }) {
   return (
     <div
       className="rounded-full shrink-0 relative"
@@ -16,7 +16,7 @@ function DiscIcon({ size = 52 }) {
             #c0c8d0, #e8e8e8, #a0d0c0, #e8e8e8
           )
         `,
-        boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.6), 0 2px 6px rgba(0,0,0,0.25)',
+        boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.3)',
       }}
     >
       <div
@@ -32,115 +32,130 @@ export default function CDPlayer({ movie, phase }) {
   const isInserting = phase === 'inserting'
 
   return (
-    <div className="relative shrink-0">
+    <div className="relative shrink-0 select-none">
       {/* Flying disc insert animation */}
       <AnimatePresence>
         {isInserting && (
           <motion.div
             className="absolute left-1/2 z-20 pointer-events-none"
-            style={{ marginLeft: -26 }}
-            initial={{ top: -70, opacity: 1, scale: 1 }}
-            animate={{ top: 12, opacity: 0, scale: 0.15 }}
+            style={{ marginLeft: -32 }}
+            initial={{ top: -80, opacity: 1, scale: 1 }}
+            animate={{ top: 16, opacity: 0, scale: 0.12 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           >
-            <DiscIcon size={52} />
+            <DiscIcon size={64} />
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* === CD PLAYER BODY === */}
-      <div className="relative" style={{ height: 275 }}>
-        {/* Top lid / disc tray area */}
+      <div className="relative" style={{ height: 280 }}>
+        {/* Top tray lid */}
         <div
-          className="relative z-10 mx-2 rounded-t-xl"
+          className="relative z-10 rounded-t-xl mx-0"
           style={{
-            height: 42,
-            background: 'linear-gradient(180deg, #8898a8 0%, #6a7a8a 60%, #5a6a7a 100%)',
-            boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.25), 0 2px 4px rgba(0,0,0,0.15)',
+            height: 44,
+            background: 'linear-gradient(180deg, #7a8a9a 0%, #5e6e7e 50%, #4a5a6a 100%)',
+            boxShadow: `
+              inset 0 1px 1px rgba(255,255,255,0.3),
+              0 2px 6px rgba(0,0,0,0.2)
+            `,
           }}
         >
           {/* Tray slot */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[68%]">
             <div
-              className="h-[18px] rounded-full overflow-hidden relative"
+              className="h-[20px] rounded-full overflow-hidden relative"
               style={{
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
-                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.9), 0 1px 0 rgba(255,255,255,0.15)',
+                background: 'linear-gradient(180deg, #080808 0%, #151515 50%, #080808 100%)',
+                boxShadow: `
+                  inset 0 2px 5px rgba(0,0,0,0.95),
+                  0 1px 0 rgba(255,255,255,0.12)
+                `,
               }}
             >
               <div
-                className="absolute inset-x-8 inset-y-[2px] rounded-full"
+                className="absolute inset-x-10 inset-y-[2px] rounded-full"
                 style={{
-                  background: 'linear-gradient(180deg, #2a2a2a 0%, #111 100%)',
+                  background: 'linear-gradient(180deg, #252525 0%, #0f0f0f 100%)',
                 }}
               />
-              {/* Tray LED strip */}
+              {/* Tray LED */}
               <div
-                className="absolute bottom-[2px] left-1/2 -translate-x-1/2 w-12 h-[1px] transition-all duration-500"
+                className="absolute bottom-[2px] left-1/2 -translate-x-1/2 w-14 h-[2px] rounded-full transition-all duration-500"
                 style={{
-                  background: isInserting || isPlaying ? '#5a9ad5' : '#333',
-                  boxShadow: isInserting || isPlaying ? '0 0 6px #5a9ad5' : 'none',
+                  background: isInserting || isPlaying ? '#4a9ad5' : '#2a2a2a',
+                  boxShadow: isInserting || isPlaying ? '0 0 8px #4a9ad5, 0 0 16px rgba(74,154,213,0.4)' : 'none',
                 }}
               />
             </div>
           </div>
-          {/* Lid edge highlight */}
-          <div className="absolute top-0 left-2 right-2 h-px bg-white/20 rounded-full" />
+          {/* Top edge highlight */}
+          <div className="absolute top-0 left-3 right-3 h-px bg-white/15 rounded-full" />
         </div>
 
-        {/* Main chassis */}
+        {/* Main chassis — seamless, no side gaps */}
         <div
-          className="relative mx-1"
+          className="relative"
           style={{
-            height: 205,
-            background: 'linear-gradient(180deg, #c4cdd6 0%, #a8b4c0 30%, #94a0ac 70%, #7a8694 100%)',
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.4), 0 4px 12px rgba(0,0,0,0.2)',
-            borderLeft: '1px solid rgba(255,255,255,0.2)',
-            borderRight: '1px solid rgba(255,255,255,0.2)',
+            height: 212,
+            background: 'linear-gradient(180deg, #b0bcc8 0%, #98a4b2 25%, #8694a2 60%, #6e7c8a 100%)',
+            boxShadow: `
+              inset 0 1px 0 rgba(255,255,255,0.35),
+              0 6px 20px rgba(0,0,0,0.25)
+            `,
           }}
         >
-          {/* Side screws */}
-          <div className="absolute top-3 left-2 w-1.5 h-1.5 rounded-full bg-[#6a7680] shadow-inner" />
-          <div className="absolute top-3 right-2 w-1.5 h-1.5 rounded-full bg-[#6a7680] shadow-inner" />
-          <div className="absolute bottom-3 left-2 w-1.5 h-1.5 rounded-full bg-[#6a7680] shadow-inner" />
-          <div className="absolute bottom-3 right-2 w-1.5 h-1.5 rounded-full bg-[#6a7680] shadow-inner" />
+          {/* Subtle side bevel lines for depth */}
+          <div className="absolute top-0 left-0 bottom-0 w-px bg-white/10" />
+          <div className="absolute top-0 right-0 bottom-0 w-px bg-black/8" />
 
-          {/* Content area: Screen + Controls */}
-          <div className="flex gap-3 h-full px-4 py-3">
+          {/* Corner screws */}
+          <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-[#5a6874] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)]"
+          />
+          <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#5a6874] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)]"
+          />
+          <div className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-[#5a6874] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)]"
+          />
+          <div className="absolute bottom-3 right-3 w-2 h-2 rounded-full bg-[#5a6874] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)]"
+          />
+
+          {/* Content: Screen + Controls */}
+          <div className="flex gap-4 h-full px-5 py-3.5">
             {/* === LCD SCREEN === */}
             <div
-              className="flex-1 rounded-lg overflow-hidden relative"
+              className="flex-1 rounded-xl overflow-hidden relative"
               style={{
-                height: 162,
-                background: '#0f1a24',
-                border: '3px solid #2a3a4a',
+                height: 172,
+                background: '#0a141c',
+                border: '4px solid #1e2e3e',
                 boxShadow: `
-                  inset 0 3px 8px rgba(0,0,0,0.6),
-                  0 1px 0 rgba(255,255,255,0.1),
-                  0 0 0 1px rgba(0,0,0,0.3)
+                  inset 0 4px 12px rgba(0,0,0,0.7),
+                  0 1px 0 rgba(255,255,255,0.08),
+                  inset 0 0 0 1px rgba(0,0,0,0.5)
                 `,
               }}
             >
-              {/* Screen inner bezel glow */}
+              {/* Inner bezel glow */}
               <div
                 className="absolute inset-0 pointer-events-none z-10 rounded-lg"
                 style={{
-                  boxShadow: 'inset 0 0 20px rgba(58,109,181,0.08)',
+                  boxShadow: 'inset 0 0 24px rgba(58,109,181,0.06)',
                 }}
               />
               {/* Glass reflection */}
               <div
                 className="absolute inset-0 pointer-events-none z-10"
                 style={{
-                  background: 'linear-gradient(155deg, rgba(255,255,255,0.07) 0%, transparent 45%)',
+                  background: 'linear-gradient(155deg, rgba(255,255,255,0.06) 0%, transparent 45%)',
                 }}
               />
               {/* Scanlines */}
               <div
-                className="absolute inset-0 pointer-events-none z-10 opacity-[0.08]"
+                className="absolute inset-0 pointer-events-none z-10 opacity-[0.06]"
                 style={{
-                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 3px)',
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.5) 2px, rgba(0,0,0,0.5) 3px)',
                 }}
               />
 
@@ -155,17 +170,17 @@ export default function CDPlayer({ movie, phase }) {
                     transition={{ duration: 0.3 }}
                   >
                     <div
-                      className="text-[13px] tracking-[6px] mb-2"
+                      className="text-[14px] tracking-[7px] mb-2"
                       style={{
                         color: '#4a7a5a',
                         fontFamily: "'VT323', monospace",
-                        textShadow: '0 0 6px rgba(90,180,120,0.25)',
+                        textShadow: '0 0 8px rgba(90,180,120,0.3)',
                       }}
                     >
-                      STARDISK
+                      SKYLAR
                     </div>
                     <div
-                      className="text-[10px] tracking-[4px] mb-1"
+                      className="text-[11px] tracking-[5px] mb-1"
                       style={{
                         color: '#3a5a4a',
                         fontFamily: "'VT323', monospace",
@@ -174,21 +189,20 @@ export default function CDPlayer({ movie, phase }) {
                       CD PLAYER
                     </div>
                     <div
-                      className="text-[11px] tracking-[3px] mt-1"
+                      className="text-[12px] tracking-[3px] mt-1.5"
                       style={{
                         color: isInserting ? '#5aaa7a' : '#3a5a4a',
                         fontFamily: "'VT323', monospace",
-                        textShadow: isInserting ? '0 0 6px rgba(90,200,120,0.5)' : 'none',
+                        textShadow: isInserting ? '0 0 8px rgba(90,200,120,0.6)' : 'none',
                       }}
                     >
                       {isInserting ? '◈ READING DISC ◈' : '◈ INSERT DISC ◈'}
                     </div>
-                    {/* Standby pulse dot */}
                     <div
-                      className="w-2 h-2 rounded-full mt-4 animate-pulse"
+                      className="w-2.5 h-2.5 rounded-full mt-5 animate-pulse"
                       style={{
-                        background: isInserting ? '#5aca7a' : '#2a4a3a',
-                        boxShadow: isInserting ? '0 0 8px #5aca7a, 0 0 16px rgba(90,200,120,0.3)' : 'none',
+                        background: isInserting ? '#5aca7a' : '#253a2e',
+                        boxShadow: isInserting ? '0 0 10px #5aca7a, 0 0 20px rgba(90,200,120,0.3)' : 'none',
                       }}
                     />
                   </motion.div>
@@ -203,24 +217,32 @@ export default function CDPlayer({ movie, phase }) {
                   >
                     {/* Poster */}
                     <div
-                      className="shrink-0 rounded-md overflow-hidden border-2 border-[#3a6db5]/30"
-                      style={{ width: 80, height: 110 }}
+                      className="shrink-0 rounded-lg overflow-hidden border-2 border-[#3a6db5]/25"
+                      style={{ width: 88, height: 120 }}
                     >
-                      <img
-                        src={import.meta.env.BASE_URL + (movie?.poster || '')}
-                        alt=""
-                        className="w-full h-full object-cover"
-                      />
+                      {movie?.poster ? (
+                        <img
+                          src={import.meta.env.BASE_URL + movie.poster}
+                          alt=""
+                          className="w-full h-full object-cover"
+                          draggable={false}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-[#1a3a2a] to-[#0d1a14] flex items-center justify-center"
+                        >
+                          <span className="text-[28px]">🎬</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Info stack */}
                     <div className="flex-1 min-w-0 flex flex-col justify-start overflow-y-auto">
                       <div
-                        className="text-[18px] font-bold"
+                        className="text-[20px] font-bold"
                         style={{
                           color: '#7acda0',
                           fontFamily: "'VT323', monospace",
-                          textShadow: '0 0 4px rgba(90,200,140,0.5), 0 0 12px rgba(90,200,140,0.2)',
+                          textShadow: '0 0 5px rgba(90,200,140,0.5), 0 0 14px rgba(90,200,140,0.2)',
                           letterSpacing: '1px',
                           lineHeight: 1.2,
                         }}
@@ -228,7 +250,7 @@ export default function CDPlayer({ movie, phase }) {
                         {movie?.title}
                       </div>
                       <div
-                        className="text-[12px] mt-1"
+                        className="text-[13px] mt-1"
                         style={{
                           color: '#5aaa7a',
                           fontFamily: "'VT323', monospace",
@@ -239,7 +261,7 @@ export default function CDPlayer({ movie, phase }) {
                         {movie?.originalTitle}
                       </div>
                       <div
-                        className="text-[11px] mt-1.5"
+                        className="text-[12px] mt-1.5"
                         style={{
                           color: '#4a9a6a',
                           fontFamily: "'VT323', monospace",
@@ -250,12 +272,11 @@ export default function CDPlayer({ movie, phase }) {
                         {movie?.year}  ·  {movie?.director}
                       </div>
 
-                      {/* Divider */}
                       <div
-                        className="my-2 h-px shrink-0"
+                        className="my-2.5 h-px shrink-0"
                         style={{
                           background: 'linear-gradient(90deg, transparent, #3a7a5a, transparent)',
-                          opacity: 0.4,
+                          opacity: 0.35,
                         }}
                       />
 
@@ -270,10 +291,10 @@ export default function CDPlayer({ movie, phase }) {
                         "{movie?.comment}"
                       </div>
 
-                      {/* Fake progress bar */}
-                      <div className="mt-3 flex items-center gap-2 shrink-0">
-                        <span className="text-[9px]" style={{ color: '#3a7a5a', fontFamily: "'VT323', monospace" }}>00:00</span>
-                        <div className="flex-1 h-[4px] rounded-full overflow-hidden" style={{ background: '#1a3a2a' }}>
+                      {/* Progress bar */}
+                      <div className="mt-3.5 flex items-center gap-2 shrink-0">
+                        <span className="text-[10px]" style={{ color: '#3a7a5a', fontFamily: "'VT323', monospace" }}>00:00</span>
+                        <div className="flex-1 h-[5px] rounded-full overflow-hidden" style={{ background: '#142e20' }}>
                           <motion.div
                             className="h-full rounded-full"
                             style={{ background: 'linear-gradient(90deg, #3a7a5a, #5aca8a)' }}
@@ -282,7 +303,7 @@ export default function CDPlayer({ movie, phase }) {
                             transition={{ duration: 60, ease: 'linear' }}
                           />
                         </div>
-                        <span className="text-[9px]" style={{ color: '#3a7a5a', fontFamily: "'VT323', monospace" }}>--:--</span>
+                        <span className="text-[10px]" style={{ color: '#3a7a5a', fontFamily: "'VT323', monospace" }}>--:--</span>
                       </div>
                     </div>
                   </motion.div>
@@ -291,77 +312,77 @@ export default function CDPlayer({ movie, phase }) {
             </div>
 
             {/* === CONTROL PANEL === */}
-            <div className="w-[72px] flex flex-col items-center justify-center gap-4 py-2">
+            <div className="w-[80px] flex flex-col items-center justify-center gap-5 py-2">
               {/* Play button */}
               <button
-                className="relative w-12 h-12 rounded-full flex items-center justify-center transition-all active:scale-95 group"
+                className="relative w-14 h-14 rounded-full flex items-center justify-center transition-all active:scale-95 group"
                 style={{
-                  background: 'linear-gradient(180deg, #e8ecf0 0%, #c8d0d8 50%, #b0b8c4 100%)',
+                  background: 'linear-gradient(180deg, #eef2f5 0%, #d0d8e0 50%, #b8c0cc 100%)',
                   boxShadow: `
-                    inset 0 1px 2px rgba(255,255,255,0.9),
-                    0 3px 6px rgba(0,0,0,0.25),
-                    0 0 0 1px rgba(0,0,0,0.12)
+                    inset 0 1px 2px rgba(255,255,255,0.95),
+                    0 4px 8px rgba(0,0,0,0.25),
+                    0 0 0 1px rgba(0,0,0,0.08)
                   `,
-                  border: '1px solid rgba(255,255,255,0.4)',
+                  border: '1px solid rgba(255,255,255,0.5)',
                 }}
               >
-                {/* Button ring */}
-                <div className="absolute inset-0 rounded-full border border-white/30" />
-                <span className="text-[14px] text-gray-600 ml-0.5 group-hover:text-gray-800 transition-colors">▶</span>
+                <div className="absolute inset-0 rounded-full border border-white/40" />
+                <span className="text-[16px] text-gray-600 ml-0.5 group-hover:text-gray-800 transition-colors"
+                >▶</span>
               </button>
 
               {/* Stop / Eject button */}
               <button
-                className="relative w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-95"
+                className="relative w-10 h-10 rounded-full flex items-center justify-center transition-all active:scale-95"
                 style={{
-                  background: 'linear-gradient(180deg, #e8ecf0 0%, #c8d0d8 50%, #b0b8c4 100%)',
+                  background: 'linear-gradient(180deg, #eef2f5 0%, #d0d8e0 50%, #b8c0cc 100%)',
                   boxShadow: `
-                    inset 0 1px 2px rgba(255,255,255,0.9),
-                    0 2px 4px rgba(0,0,0,0.2),
-                    0 0 0 1px rgba(0,0,0,0.1)
+                    inset 0 1px 2px rgba(255,255,255,0.95),
+                    0 3px 6px rgba(0,0,0,0.2),
+                    0 0 0 1px rgba(0,0,0,0.06)
                   `,
-                  border: '1px solid rgba(255,255,255,0.4)',
+                  border: '1px solid rgba(255,255,255,0.5)',
                 }}
               >
-                <div className="absolute inset-0 rounded-full border border-white/30" />
-                <span className="text-[10px] text-gray-500">▮</span>
+                <div className="absolute inset-0 rounded-full border border-white/40" />
+                <span className="text-[11px] text-gray-500">▮</span>
               </button>
 
               {/* LED cluster */}
-              <div className="flex gap-4 mt-1">
+              <div className="flex gap-5 mt-1">
                 <div className="flex flex-col items-center gap-1">
                   <div
-                    className="w-2.5 h-2.5 rounded-full transition-all duration-500 relative"
+                    className="w-3 h-3 rounded-full transition-all duration-500 relative"
                     style={{
-                      background: isPlaying ? '#ff5555' : '#552222',
+                      background: isPlaying ? '#ff4444' : '#4a1a1a',
                       boxShadow: isPlaying
-                        ? '0 0 6px #ff5555, 0 0 12px rgba(255,85,85,0.4), inset 0 1px 1px rgba(255,255,255,0.3)'
-                        : 'inset 0 1px 2px rgba(0,0,0,0.5)',
+                        ? '0 0 8px #ff4444, 0 0 16px rgba(255,68,68,0.4), inset 0 1px 1px rgba(255,255,255,0.3)'
+                        : 'inset 0 1px 3px rgba(0,0,0,0.6)',
                     }}
                   >
-                    {isPlaying && <div className="absolute inset-0 rounded-full animate-pulse bg-red-400/30" />}
+                    {isPlaying && <div className="absolute inset-0 rounded-full animate-pulse bg-red-400/25" />}
                   </div>
-                  <span className="text-[6px] text-gray-500 tracking-wider font-medium">PWR</span>
+                  <span className="text-[7px] text-gray-500 tracking-wider font-medium">PWR</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <div
-                    className="w-2.5 h-2.5 rounded-full transition-all duration-500 relative"
+                    className="w-3 h-3 rounded-full transition-all duration-500 relative"
                     style={{
-                      background: isPlaying ? '#55ff77' : '#225522',
+                      background: isPlaying ? '#44ee66' : '#1a3a1a',
                       boxShadow: isPlaying
-                        ? '0 0 6px #55ff77, 0 0 12px rgba(85,255,119,0.4), inset 0 1px 1px rgba(255,255,255,0.3)'
-                        : 'inset 0 1px 2px rgba(0,0,0,0.5)',
+                        ? '0 0 8px #44ee66, 0 0 16px rgba(68,238,102,0.4), inset 0 1px 1px rgba(255,255,255,0.3)'
+                        : 'inset 0 1px 3px rgba(0,0,0,0.6)',
                     }}
                   >
-                    {isPlaying && <div className="absolute inset-0 rounded-full animate-pulse bg-green-400/30" />}
+                    {isPlaying && <div className="absolute inset-0 rounded-full animate-pulse bg-green-400/25" />}
                   </div>
-                  <span className="text-[6px] text-gray-500 tracking-wider font-medium">PLY</span>
+                  <span className="text-[7px] text-gray-500 tracking-wider font-medium">PLY</span>
                 </div>
               </div>
 
               {/* Brand label */}
               <div
-                className="text-[6px] tracking-[3px] text-gray-400 mt-1"
+                className="text-[7px] tracking-[3px] text-gray-400 mt-1"
                 style={{ fontFamily: "'VT323', monospace" }}
               >
                 STAR-1
@@ -372,22 +393,22 @@ export default function CDPlayer({ movie, phase }) {
 
         {/* Bottom base / feet */}
         <div
-          className="relative mx-1 rounded-b-lg"
+          className="relative rounded-b-xl"
           style={{
             height: 24,
-            background: 'linear-gradient(180deg, #5a6a7a 0%, #3a4a5a 100%)',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+            background: 'linear-gradient(180deg, #4a5a6a 0%, #323e4a 100%)',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
           }}
         >
           {/* Ventilation slits */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-[3px]">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="w-[2px] h-[8px] rounded-full bg-[#2a3a4a]" />
+            {Array.from({ length: 14 }).map((_, i) => (
+              <div key={i} className="w-[2px] h-[9px] rounded-full bg-[#1e2a36]" />
             ))}
           </div>
           {/* Feet */}
-          <div className="absolute -bottom-1 left-4 w-3 h-2 rounded-b bg-[#2a3a4a]" />
-          <div className="absolute -bottom-1 right-4 w-3 h-2 rounded-b bg-[#2a3a4a]" />
+          <div className="absolute -bottom-1 left-5 w-3.5 h-2 rounded-b bg-[#1e2a36]" />
+          <div className="absolute -bottom-1 right-5 w-3.5 h-2 rounded-b bg-[#1e2a36]" />
         </div>
       </div>
     </div>

@@ -7,15 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'retro-bg': '#dce073',
-        'retro-blue': '#3a6db5',
-        'retro-blue-light': '#5a9ad5',
-        'retro-blue-dark': '#2a5a8a',
-        'retro-text': '#2a5a8a',
-        'retro-muted': '#5a8ab5',
+        'retro-bg': '#121018',
+        'retro-surface': '#f5f0e8',
+        'retro-surface-light': '#4a3a2a',
+        'retro-accent': '#c89048',
+        'retro-accent-light': '#e0c078',
+        'retro-text': '#2a2018',
+        'retro-muted': '#8a7d6e',
       },
       fontFamily: {
-        pixel: ["'VT323'", "'Courier New'", 'monospace'],
+        pixel: ["'Kalam'", "'JasonHandwriting'", "'PingFang SC'", "'Microsoft YaHei'", 'sans-serif'],
       },
     },
   },
