@@ -30,7 +30,7 @@ function BrowserChrome({ url, onHome, onBack, canGoBack }) {
           🏠
         </button>
       </div>
-      <div className="flex-1 flex items-center gap-1.5 bg-[#121018] border-2 border-[#d0c8c0] border-l-[#c0b8b0] border-t-[#c0b8b0] rounded px-3 py-[4px] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.3)]">
+      <div className="flex-1 min-w-0 flex items-center gap-1.5 bg-[#121018] border-2 border-[#d0c8c0] border-l-[#c0b8b0] border-t-[#c0b8b0] rounded px-3 py-[4px] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.3)]">
         <span className="text-[11px] text-[#b09878]">🔒</span>
         <span className="text-[12px] text-[#f0e4d0] truncate font-mono">{url}</span>
       </div>
@@ -501,7 +501,7 @@ export default function AboutMeWindow() {
         canGoBack={canGoBack}
       />
 
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden overflow-x-hidden">
         {view === 'home' && (
           <HomePage onSearch={handleSearch} suggestions={aboutData.suggestions} />
         )}
